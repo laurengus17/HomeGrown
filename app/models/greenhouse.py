@@ -11,8 +11,8 @@ class Greenhouse(db.Model):
     plants = db.relationship('Plant', back_populates='greenhouse')
 
     def to_dict(self):
-    return {
-        'id': self.id,
-        'userId': self.userId,
-        'plantId': self.plantId
-    }
+        return {
+            'id': self.id,
+            'userId': self.userId,
+            'plantId': self.plantId
+        }

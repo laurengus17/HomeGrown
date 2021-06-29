@@ -11,8 +11,8 @@ class Wishlist(db.Model):
     plants = db.relationship('Plant', back_populates='wishlist')
 
     def to_dict(self):
-    return {
-        'id': self.id,
-        'userId': self.userId,
-        'plantId': self.plantId
-    }
+        return {
+            'id': self.id,
+            'userId': self.userId,
+            'plantId': self.plantId
+        }

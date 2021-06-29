@@ -10,8 +10,8 @@ class Friend(db.Model):
     user = db.relationship('User', back_populates='friends')
     
     def to_dict(self):
-    return {
-        'id': self.id,
-        'userId': self.userId,
-        'plantId': self.plantId
-    }
+        return {
+            'id': self.id,
+            'userId': self.userId,
+            'plantId': self.plantId
+        }

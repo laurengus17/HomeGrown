@@ -8,10 +8,10 @@ class Plant(db.Model):
     description = db.Column(db.Text, nullable = False)
     imgURL = db.Column(db.String(255), nullable=False)
     care = db.Column(db.Text, nullable = False)
-    light = (db.String(40), nullable=False)
-    size = (db.String(40), nullable=False)
-    difficulty = (db.String(40), nullable=False)
-    variety = (db.String(60), nullable=False)
+    light = db.Column(db.String(40), nullable = False)
+    size = db.Column(db.String(40), nullable = False)
+    difficulty = db.Column(db.String(40), nullable = False)
+    variety = db.Column(db.String(60), nullable = False)
     userId = db.Column(db.Integer, db.ForeignKey('users.id'), nullable = False)
 
     user = db.relationship('User', back_populates='plants')
@@ -20,15 +20,15 @@ class Plant(db.Model):
     comments = db.relationship('Comment', back_populates='comments')
 
     def to_dict(self):
-    return {
-        'id': self.id,
-        'name': self.name,
-        'description': self.description,
-        'imgURL': self.imgURL,
-        'care': self.care,
-        'light': self.light,
-        'size': self.size,
-        'difficulty': self.difficulty,
-        'variety': self.variety,
-        'userId': self.userId
-    }
+        return {
+            'id': self.id,
+            'name': self.name,
+            'description': self.description,
+            'imgURL': self.imgURL,
+            'care': self.care,
+            'light': self.light,
+            'size': self.size,
+            'difficulty': self.difficulty,
+            'variety': self.variety,
+            'userId': self.userId
+        }
