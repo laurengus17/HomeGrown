@@ -14,6 +14,12 @@ class User(db.Model, UserMixin):
     hashed_password = db.Column(db.String(255), nullable=False)
     imgURL = db.Column(db.String(255), nullable=False)
 
+    plants = db.relationship('Plant', back_populates='user')
+    friends = db.relationship('Friend', back_populates='user')
+    comments = db.relationship('Comment', back_populates='comments')
+    greenhouse = db.relationship('Greenhouse', back_populates='user')
+    wishlist = db.relationship('Wishlist', back_populates='user')
+
     @property
     def password(self):
         return self.hashed_password
@@ -31,5 +37,6 @@ class User(db.Model, UserMixin):
             'first_name': self.first_name,
             'last_name': self.last_name,
             'username': self.username,
-            'email': self.email
+            'email': self.email,
+            'imgURL': self.imgURL
         }
