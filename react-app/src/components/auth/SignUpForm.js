@@ -5,22 +5,34 @@ import { signUp } from '../../store/session';
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
+  const [firstname, setFirstname] = useState('');
+  const [lastname, setLastname] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
+  const [image, setImage] = useState(null)
+   const [imageLoading, setImageLoading] = useState(false);
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const data = await dispatch(signUp(username, email, password));
+      const data = await dispatch(signUp(firstname, lastname, username, email, password));
       if (data) {
         setErrors(data)
       }
     }
   };
+
+  const updateFirstname = (e) => {
+    setFirstname(e.target.value);
+  }
+
+  const updateLastname = (e) => {
+    setLastname(e.target.value);
+  }
 
   const updateUsername = (e) => {
     setUsername(e.target.value);
@@ -38,6 +50,10 @@ const SignUpForm = () => {
     setRepeatPassword(e.target.value);
   };
 
+  const updateImage = (e) => {
+    setImage(e.target.value);
+  }
+
   if (user) {
     return <Redirect to='/' />;
   }
@@ -48,6 +64,24 @@ const SignUpForm = () => {
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
+      </div>
+      <div>
+        <label>First Name</label>
+        <input
+          type='text'
+          name='firstname'
+          onChange={updateFirstname}
+          value={firstname}
+        ></input>
+      </div>
+      <div>
+      <label>Last Name</label>
+        <input
+          type='text'
+          name='lastname'
+          onChange={updateLastname}
+          value={lastname}
+        ></input>
       </div>
       <div>
         <label>User Name</label>
@@ -86,7 +120,16 @@ const SignUpForm = () => {
           required={true}
         ></input>
       </div>
+      <div>
+        <label>Profile Photo</label>
+        <input
+          type='file'
+          accept="image/*"
+          onChange={updateImage}
+        ></input>
+      </div>
       <button type='submit'>Sign Up</button>
+      {(imageLoading)&& <p>Loading...</p>}
     </form>
   );
 };
