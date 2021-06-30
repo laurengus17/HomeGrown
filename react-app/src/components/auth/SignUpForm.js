@@ -11,8 +11,6 @@ const SignUpForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
-  const [image, setImage] = useState(null)
-   const [imageLoading, setImageLoading] = useState(false);
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
@@ -50,10 +48,6 @@ const SignUpForm = () => {
     setRepeatPassword(e.target.value);
   };
 
-  const updateImage = (e) => {
-    setImage(e.target.value);
-  }
-
   if (user) {
     return <Redirect to='/' />;
   }
@@ -69,7 +63,7 @@ const SignUpForm = () => {
         <label>First Name</label>
         <input
           type='text'
-          name='firstname'
+          name='first_name'
           onChange={updateFirstname}
           value={firstname}
         ></input>
@@ -78,9 +72,9 @@ const SignUpForm = () => {
       <label>Last Name</label>
         <input
           type='text'
-          name='lastname'
+          name='last_name'
           onChange={updateLastname}
-          value={lastname}
+          value={firstname}
         ></input>
       </div>
       <div>
@@ -120,16 +114,7 @@ const SignUpForm = () => {
           required={true}
         ></input>
       </div>
-      <div>
-        <label>Profile Photo</label>
-        <input
-          type='file'
-          accept="image/*"
-          onChange={updateImage}
-        ></input>
-      </div>
       <button type='submit'>Sign Up</button>
-      {(imageLoading)&& <p>Loading...</p>}
     </form>
   );
 };

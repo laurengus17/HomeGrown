@@ -15,34 +15,38 @@ const NavBar = () => {
     <nav>
       <ul className='navbar_all_items'>
         <li className='left_navbar'>
-          <Link to='/home' exact='true' activeClassName='active'>
+          <Link to='/home' exact='true' activeclassname='active'>
             <img src={logo} alt='logo' className='logo_img'></img>
           </Link>
-          <Link to='/home' exact='true' activeClassName='active'>
+          <Link to='/home' exact='true' activeclassname='active'>
             <h3>Home</h3>
           </Link>
           {/* put component for browse here */}
         </li>
         {/* insert search bar component */}
+        <>
         <li className='right_navbar'>
           {user ? 
-          // <LogoutButton />
+          <>
+          <LogoutButton />
           <button>
             <i className="fas fa-leaf" />
           </button>
-          // profile dropdown will go here
+          {/* // profile dropdown will go here */}
+          </>
           : 
           <>
           {/* modals for logging in and signing up */}
-          <Link to='/login' exact='true' activeClassName='active'>
+          <Link to='/login' exact='true' activeclassname='active'>
             Login
           </Link>
-          <Link to='/sign-up' exact='true' activeClassName='active'>
+          <Link to='/sign-up' exact='true' activeclassname='active'>
             Sign Up
           </Link>
           </>
           }
         </li>
+        </>
         <li>
         </li>
       </ul>
