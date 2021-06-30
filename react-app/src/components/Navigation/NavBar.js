@@ -1,15 +1,15 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import LogoutButton from '../auth/LogoutButton';
+import LoginFormModal from '../auth/LoginFormModal';
+import SignUpFormModal from '../auth/SignUpFormModal'
 import logo from '../../images/logo.png'
 import './NavBar.css'
 
 const NavBar = () => {
   const user = useSelector(state => state.session.user);
-
-
 
   return (
     <nav>
@@ -37,12 +37,8 @@ const NavBar = () => {
           : 
           <>
           {/* modals for logging in and signing up */}
-          <Link to='/login' exact='true' activeclassname='active'>
-            Login
-          </Link>
-          <Link to='/sign-up' exact='true' activeclassname='active'>
-            Sign Up
-          </Link>
+          <SignUpFormModal />
+          <LoginFormModal />
           </>
           }
         </li>
