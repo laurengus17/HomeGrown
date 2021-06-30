@@ -2,6 +2,11 @@ from .db import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 
+friends = db.Table("friends",
+    db.Column('userId', db.Integer, db.ForeignKey("users.id")),
+    db.Column('friendId', db.Integer, db.ForeignKey("users.id")),
+    db.Column('confirmed', db.Boolean, default=False)
+)
 
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
@@ -14,9 +19,16 @@ class User(db.Model, UserMixin):
     hashed_password = db.Column(db.String(255), nullable=False)
     imgURL = db.Column(db.String(255), nullable=False)
 
+    Friendships = db.relationship(
+        "User", secondary=friends, 
+        primaryjoin=(friends.c.userId == id),
+        secondaryjoin=(friends.c.friendId == id),
+        backref=db.backref("friends", lazy='dynamic'),
+        lazy='dynamic'
+    )
+
     plants = db.relationship('Plant', back_populates='user')
-    friends = db.relationship('Friend', back_populates='user')
-    comments = db.relationship('Comment', back_populates='comments')
+    comments = db.relationship('Comment', back_populates='user')
     greenhouse = db.relationship('Greenhouse', back_populates='user')
     wishlist = db.relationship('Wishlist', back_populates='user')
 
@@ -40,3 +52,4 @@ class User(db.Model, UserMixin):
             'email': self.email,
             'imgURL': self.imgURL
         }
+

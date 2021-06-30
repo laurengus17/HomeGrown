@@ -1,4 +1,4 @@
-from app.models import db, Friend
+from app.models import db, friends
 
 
 def seed_friends():

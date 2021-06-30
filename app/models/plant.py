@@ -17,7 +17,7 @@ class Plant(db.Model):
     user = db.relationship('User', back_populates='plants')
     greenhouse = db.relationship('Greenhouse', back_populates='plants')
     wishlist = db.relationship('Wishlist', back_populates='plants')
-    comments = db.relationship('Comment', back_populates='comments')
+    comments = db.relationship('Comment', back_populates='plants')
 
     def to_dict(self):
         return {
