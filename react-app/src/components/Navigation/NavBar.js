@@ -1,15 +1,21 @@
-
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import LogoutButton from '../auth/LogoutButton';
 import LoginFormModal from '../auth/LoginFormModal';
 import SignUpFormModal from '../auth/SignUpFormModal'
+import ProfileButton from './ProfileButton';
+import BrowseButton from './BrowseButton';
+import SearchBar from './SearchBar';
 import logo from '../../images/logo.png'
 import './NavBar.css'
 
 const NavBar = () => {
   const user = useSelector(state => state.session.user);
+  const history = useHistory();
+
+  const handleHome = () => {
+    history.push('/home')
+  }
 
   return (
     <nav>
@@ -18,33 +24,27 @@ const NavBar = () => {
           <Link to='/home' exact='true' activeclassname='active'>
             <img src={logo} alt='logo' className='logo_img'></img>
           </Link>
-          <Link to='/home' exact='true' activeclassname='active'>
-            <h3>Home</h3>
-          </Link>
-          {/* put component for browse here */}
+          <button className='home_button' onClick={handleHome}>Home</button>
+          <BrowseButton />
         </li>
-        {/* insert search bar component */}
+        <SearchBar />
         <>
         <li className='right_navbar'>
           {user ? 
           <>
-          <LogoutButton />
-          <button>
+          <button className='wishlist_button'>
             <i className="fas fa-leaf" />
           </button>
-          {/* // profile dropdown will go here */}
+          <ProfileButton user={user} />
           </>
           : 
           <>
-          {/* modals for logging in and signing up */}
           <SignUpFormModal />
           <LoginFormModal />
           </>
           }
         </li>
         </>
-        <li>
-        </li>
       </ul>
     </nav>
   );
