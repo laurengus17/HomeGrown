@@ -5,19 +5,20 @@ import { signUp } from '../../store/session';
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
-  const [firstname, setFirstname] = useState('');
-  const [lastname, setLastname] = useState('');
+  const [first_name, setFirstname] = useState('');
+  const [last_name, setLastname] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
+  const [imgURL, setImgURL] = useState('')
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const data = await dispatch(signUp(firstname, lastname, username, email, password));
+      const data = await dispatch(signUp(first_name, last_name, username, email, password, imgURL));
       if (data) {
         setErrors(data)
       }
@@ -48,8 +49,12 @@ const SignUpForm = () => {
     setRepeatPassword(e.target.value);
   };
 
+  const updateImgURL = (e) => {
+    setImgURL(e.target.value);
+  }
+
   if (user) {
-    return <Redirect to='/' />;
+    return <Redirect to='/home' />;
   }
 
   return (
@@ -65,7 +70,7 @@ const SignUpForm = () => {
           type='text'
           name='first_name'
           onChange={updateFirstname}
-          value={firstname}
+          value={first_name}
         ></input>
       </div>
       <div>
@@ -74,7 +79,7 @@ const SignUpForm = () => {
           type='text'
           name='last_name'
           onChange={updateLastname}
-          value={firstname}
+          value={last_name}
         ></input>
       </div>
       <div>
@@ -112,6 +117,14 @@ const SignUpForm = () => {
           onChange={updateRepeatPassword}
           value={repeatPassword}
           required={true}
+        ></input>
+      </div>
+      <div>
+        <label>Profile Picture</label>
+        <input
+          type='file'
+          name='imgURL'
+          onChange={updateImgURL}
         ></input>
       </div>
       <button type='submit'>Sign Up</button>

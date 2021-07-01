@@ -21,14 +21,14 @@
     transition: .2s ease-in;
     margin: 15px;
     background-color: #D1ADCC;
-    color: #f6f2e9;
+    color: #5f2c3e;
     font-weight: bold;
     border: 2px solid #5f2c3e;
 }
 
 .home_button:hover {
     background-color: #ffa903;
-    color: #5f2c3e;
+    box-shadow: 2px 2px 2px #9DC88D;
 }
 
 .browse_button {
@@ -38,14 +38,14 @@
     transition: .2s ease-in;
     margin: 15px 15px 15px 0;
     background-color: #D1ADCC;
-    color: #f6f2e9;
+    color: #5f2c3e;
     font-weight: bold;
     border: 2px solid #5f2c3e;
 }
 
 .browse_button:hover {
     background-color: #ffa903;
-    color: #5f2c3e;
+    box-shadow: 2px 2px 2px #9DC88D;
 }
 
 .browse_dropdown {
@@ -96,6 +96,13 @@
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     padding: 5px;
+    background-color: #D1ADCC;
+    color: #5f2c3e;
+}
+
+.searchbar button:hover {
+    background-color: #ffa903;
+    box-shadow: 2px 2px 2px #9DC88D;
 }
 
 .right_navbar {
@@ -103,38 +110,42 @@
     display: flex;
 }
 
-.wishlist_button {
+.wishlist_button,
+.nav-signup {
     height: 28px;
     width: 35px;
     border-radius: 5px;
     transition: .2s ease-in;
     margin: 15px;
     background-color: #D1ADCC;
-    color: #f6f2e9;
+    color: #5f2c3e;
     font-weight: bold;
     border: 2px solid #5f2c3e;
 }
 
-.wishlist_button:hover {
+.wishlist_button:hover,
+.nav-signup:hover {
     background-color: #ffa903;
-    color: #5f2c3e;
+    box-shadow: 2px 2px 2px #9DC88D;
 }
 
-.user_button {
+.user_button,
+.nav-login {
     height: 28px;
     width: 50px;
     border-radius: 5px;
     transition: .2s ease-in;
     margin: 15px 15px 15px 0;
     background-color: #D1ADCC;
-    color: #f6f2e9;
+    color: #5f2c3e;
     font-weight: bold;
     border: 2px solid #5f2c3e;
 }
 
-.user_button:hover {
+.user_button:hover,
+.nav-login:hover {
     background-color: #ffa903;
-    color: #5f2c3e;
+    box-shadow: 2px 2px 2px #9DC88D;
 }
 
 .user_dropdown {
@@ -149,6 +160,20 @@
     right: 0;
 }
 
-.user_dropdown li:hover {
+.logout_button {
+    height: 28px;
+    width: 80px;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    background-color: #D1ADCC;
+    color: #5f2c3e;
+    font-weight: bold;
+    border: 2px solid #5f2c3e;
+    margin: 5px;
+    justify-content: center;
+}
+
+.logout_button:hover {
     background-color: #ffa903;
+    box-shadow: 2px 2px 2px #9DC88D;
 }
