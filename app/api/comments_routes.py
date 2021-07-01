@@ -7,6 +7,7 @@ from app.forms.comment_form import CommentForm
 comments_routes = Blueprint('comments', __name__)
 
 
+
 # GET /api/comments
 @comments_routes.route('/')
 def all_comments():
