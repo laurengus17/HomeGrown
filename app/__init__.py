@@ -11,6 +11,7 @@ from .api.auth_routes import auth_routes
 from .api.comments_routes import comments_routes
 from .api.plants_routes import plants_routes
 from .api.search_routes import search_routes
+from .api.s3_tester_route import s3_tester_route
 
 from .seeds import seed_commands
 
@@ -37,6 +38,7 @@ app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(comments_routes, url_prefix='/api/comments')
 app.register_blueprint(plants_routes, url_prefix='/api/plants')
 app.register_blueprint(search_routes, url_prefix='/api/search')
+app.register_blueprint(s3_tester_route, url_prefix='/api/s3tester')
 db.init_app(app)
 Migrate(app, db)
 

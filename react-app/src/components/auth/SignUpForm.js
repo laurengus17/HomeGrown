@@ -11,7 +11,7 @@ const SignUpForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
-  const [imgURL, setImgURL] = useState('')
+  const [imgURL, setImgURL] = useState(null)
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
@@ -49,8 +49,8 @@ const SignUpForm = () => {
     setRepeatPassword(e.target.value);
   };
 
-  const updateImgURL = (e) => {
-    setImgURL(e.target.value);
+  const updateImage = (e) => {
+    setImgURL(e.target.files[0]);
   }
 
   if (user) {
@@ -60,9 +60,9 @@ const SignUpForm = () => {
   return (
     <form onSubmit={onSignUp}>
       <div>
-        {errors.map((error, ind) => (
+        {/* {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
-        ))}
+        ))} */}
       </div>
       <div>
         <label>First Name</label>
@@ -124,7 +124,7 @@ const SignUpForm = () => {
         <input
           type='file'
           name='imgURL'
-          onChange={updateImgURL}
+          onChange={updateImage}
         ></input>
       </div>
       <button type='submit'>Sign Up</button>

@@ -9,7 +9,7 @@ class PlantForm(FlaskForm):
     care = StringField('care', validators=[DataRequired()])
     light = SelectField('light', choices=[('low', 'Low Light'), ('average', 'Partially Shaded'), ('high', 'Direct Light')], validators=[DataRequired()])
     size = SelectField('size', choices=[('small', 'Small'), ('medium', 'Medium'), ('large', 'Large')], validators=[DataRequired()])
-    difficulty = IntegerField('difficulty', validators=[DataRequired()], widget=html5.NumberInput(min = 1, max = 5))
+    difficulty = IntegerField('difficulty', validators=[DataRequired()])
     variety = SelectField('variety', choices=[('Air Plant', 'Air Plant'), ('Calathea', 'Calathea'), ('Fern', 'Fern'), ('Fiddle Leaf Fig', 'Fiddle leaf Fig'), ('Flowers', 'Flowers'),
     ('Money Tree', 'Money Tree'), ('Monstera', 'Monstera'), ('Palm', 'Palm'), ('Peperomia', 'Peperomia'), ('Philodendron', 'Philodendron'), ('Pothos', 'Pothos'),
     ('Snake Plant', 'Snake Plant'), ('Succulent', 'Succulent')], validators=[DataRequired()])
