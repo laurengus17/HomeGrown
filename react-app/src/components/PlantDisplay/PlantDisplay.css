@@ -1,0 +1,26 @@
+.plant_container {
+    display: flex;
+    width: 250px;
+    height: 250px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 4px;
+    background-color:  rgba(167, 167, 167, 0.1);
+
+}
+
+
+.plant_container:hover {
+    transition:ease-in-out;
+    box-shadow: 0px 0px 15px rgb(0, 0, 0, 0.7);
+    z-index: 30px;
+}
+
+
+.plant_img {
+    width: 180px;
+    height: 200px;
+}

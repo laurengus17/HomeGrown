@@ -50,9 +50,11 @@ const removePlant = (id) => {
 
 export const getPlants= () => async (dispatch) => {
     const res = await fetch(`/api/plants/`);
+    console.log('OUTSIDE THE IF BLOCKKKKK')
     if(res.ok) {
+        console.log('INSIDE THE IFFF BLOCKKKK')
         const plants = await res.json();
-        dispatch(loadPlants(plants));
+        dispatch(loadPlants(plants.plants));
         return res;
     }
 } 

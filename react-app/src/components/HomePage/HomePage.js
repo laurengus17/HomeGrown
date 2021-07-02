@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPlants } from '../../store/plants'
 
@@ -6,8 +7,7 @@ import { getPlants } from '../../store/plants'
 const HomePage = () => {
     const dispatch = useDispatch();
     const plantState = useSelector(state => state.plants)
-    // const plants = Object.values(plantState)
-    console.log(plantState)
+    const plants = Object.values(plantState)
 
     useEffect(() => {
         dispatch(getPlants())
@@ -16,7 +16,9 @@ const HomePage = () => {
     return (
         <>
             <h2>HELLO</h2>
-            <p></p>
+            <Link to='/browse_all' exact={true}>
+                Browse All Plants
+            </Link>
         </>
     )
 }

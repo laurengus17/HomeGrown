@@ -9,6 +9,7 @@ import HomePage from './components/HomePage/HomePage';
 import LandingPage from './components/LandingPage/LandingPage';
 import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
+import BrowseAllLandingPage from './components/BrowseAll/BrowseAllLandingPage';
 import { authenticate } from './store/session';
 
 function App() {
@@ -34,7 +35,6 @@ function App() {
         <Route path='/' exact={true}>
           <LandingPage />
         </Route>
-        
         <Route path='/login' exact={true}>
           <LoginForm />
         </Route>
@@ -43,6 +43,9 @@ function App() {
         </Route>
         <Route path='/home' exact={true}>
           <HomePage />
+        </Route>
+        <Route path='/browse_all' exact={true}>
+          <BrowseAllLandingPage />
         </Route>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
