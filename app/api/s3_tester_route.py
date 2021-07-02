@@ -4,11 +4,10 @@ from app.models import db, User
 from app.s3_helpers import (
     upload_file_to_s3, allowed_file, get_unique_filename)
 
-s3_tester_route = Blueprint("s3_upload", __name__)
+s3_tester_route = Blueprint("s3tester", __name__)
 
 
-@s3_tester_route.route("s3_upload", methods=["POST"])
-@login_required
+@s3_tester_route.route("/s3_upload", methods=["POST"])
 def upload_image():
     if "image" not in request.files:
         return {"errors": "image required"}, 400
@@ -16,6 +15,7 @@ def upload_image():
     image = request.files["image"]
 
     if not allowed_file(image.filename):
+        print('HELLO ALLOWED FILE')
         return {"errors": "file type not permitted"}, 400
     
     image.filename = get_unique_filename(image.filename)
@@ -23,6 +23,8 @@ def upload_image():
     upload = upload_file_to_s3(image)
 
     if "url" not in upload:
+        print('HELLO FROM UPLOADDDD')
+        print(upload, "THIS IS UPLOAD")
         # if the dictionary doesn't have a url key
         # it means that there was an error when we tried to upload
         # so we send back that error message

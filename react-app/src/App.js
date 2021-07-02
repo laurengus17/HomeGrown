@@ -5,6 +5,11 @@ import NavBar from './components/Navigation/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
+import HomePage from './components/HomePage/HomePage';
+import LandingPage from './components/LandingPage/LandingPage';
+import LoginForm from './components/auth/LoginForm';
+import SignUpForm from './components/auth/SignUpForm';
+import BrowseAllLandingPage from './components/BrowseAll/BrowseAllLandingPage';
 import { authenticate } from './store/session';
 
 function App() {
@@ -23,31 +28,34 @@ function App() {
   }
 
   return (
-    <div>
+    <>
     <BrowserRouter>
-      <NavBar />
+    <NavBar />
       <Switch>
-        {/* <Route>
-          <>
-        </Route> */}
-        {/* <Route path='/login' exact={true}>
+        <Route path='/' exact={true}>
+          <LandingPage />
+        </Route>
+        <Route path='/login' exact={true}>
           <LoginForm />
         </Route>
         <Route path='/sign-up' exact={true}>
-          <SignUpForm /> */}
-        {/* </Route> */}
+          <SignUpForm />
+        </Route>
+        <Route path='/home' exact={true}>
+          <HomePage />
+        </Route>
+        <Route path='/browse_all' exact={true}>
+          <BrowseAllLandingPage />
+        </Route>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
         </ProtectedRoute>
-        <ProtectedRoute path='/' exact={true} >
-          <h1>My Home Page</h1>
-        </ProtectedRoute>
       </Switch>
     </BrowserRouter>
-    </div>
+    </>
   );
 }
 

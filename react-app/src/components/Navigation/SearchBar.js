@@ -32,7 +32,7 @@ const SearchBar = () => {
                 onChange={searchInput}
                 onKeyPress={enterSubmit} />
                 <button onClick={searchPlant}>
-                    <i class="fas fa-search" />
+                    <i className="fas fa-search" />
                 </button>
             </div>
         </li>
