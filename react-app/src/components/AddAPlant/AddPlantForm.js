@@ -82,6 +82,7 @@ const AddPlantForm = () => {
             <select
             name='light'
             onChange={updateLight}
+            value={light}
             >
                 <option value='low'>Low Light</option>
                 <option value='average'>Partially Shaded</option>
@@ -93,6 +94,7 @@ const AddPlantForm = () => {
             <select
             name='size'
             onChange={updateSize}
+            value={size}
             >
                 <option value='small'>Small</option>
                 <option value='medium'>Medium</option>
@@ -104,6 +106,7 @@ const AddPlantForm = () => {
             <select
             name='difficulty'
             onChange={updateDifficulty}
+            value={difficulty}
             >
                 <option value={1}>1 (Easy)</option>
                 <option value={2}>2</option>
@@ -117,6 +120,7 @@ const AddPlantForm = () => {
             <select
             name='variety'
             onChange={updateVariety}
+            value={variety}
             >
                 <option value='Air Plant'>Air Plant</option>
                 <option value='Calathea'>Calathea</option>
