@@ -1,0 +1,7 @@
+.profile_photo {
+    height: 80px;
+    width: 80px;
+    margin: 15px;
+    border-radius: 50%;
+    transform: scale(1.5, 1.5);
+}

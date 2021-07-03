@@ -79,8 +79,7 @@ export const getUserPlants= (userId) => async (dispatch) => {
 
 // POST, PUT, DELETE
 
-export const createPlant = (plant) => async (dispatch) => {
-    const { name, description, imgURL, care, light, size, difficulty, variety, userId } = plant;
+export const createPlant = (name, description, imgURL, care, light, size, difficulty, variety, userId) => async (dispatch) => {
 
     const formData = new FormData();
     formData.append('name', name);
@@ -148,7 +147,6 @@ const plantsReducer = (state = initialState, action) => {
     let newState;
     switch (action.type) {
         case LOAD_PLANTS:
-            console.log('INSIDE THE CASEEEE')
             newState = {};
             action.plants.forEach((plant) => {
                 newState[plant.id] = plant;

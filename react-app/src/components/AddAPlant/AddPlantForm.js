@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom';
+import { createPlant } from '../../store/plants';
 
 
-const AddPlantForm = () => {
+const AddPlantForm = ({ setShowModal }) => {
     const user = useSelector(state => state.session.user);
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
     const [imgURL, setImgURL] = useState(null)
     const [care, setCare] = useState('');
-    const [light, setLight] = useState('');
-    const [size, setSize] = useState('');
-    const [difficulty, setDifficulty] = useState('');
-    const [variety, setVariety] = useState('');
+    const [light, setLight] = useState('low');
+    const [size, setSize] = useState('small');
+    const [difficulty, setDifficulty] = useState(1);
+    const [variety, setVariety] = useState('Air Plant');
 
 
     const updateName = (e) => {
@@ -48,8 +51,28 @@ const AddPlantForm = () => {
         setImgURL(e.target.files[0]);
     }
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const userId = user.id
+
+        let createdPlant = await dispatch(createPlant(name,
+            description,
+            imgURL,
+            care,
+            light,
+            size,
+            difficulty,
+            variety,
+            userId));
+        if (createdPlant) {
+            history.push(`/browse_all`)
+            setShowModal(false)
+        }
+    }
+
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
         <div>
             <label>Plant Name</label>
             <input
