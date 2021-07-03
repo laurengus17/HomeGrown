@@ -57,31 +57,36 @@ def single_plant(plantId):
 @login_required
 def create_plant():
     form = PlantForm()
+    print(form.data, 'THIS IS THE FORMMMM')
     form['csrf_token'].data = request.cookies['csrf_token']
-
-    plant = Plant()
     if form.validate():
-        form.populate_obj(plant)
+        plant = Plant(
+            name=form.data['name'],
+            description=form.data['description'],
+            imgURL=form.data['imgURL'],
+            care=form.data['care'],
+            light=form.data['light'],
+            size=form.data['size'],
+            difficulty=form.data['difficulty'],
+            variety=form.data['variety'],
+            userId=form.data['userId'],
+        )
 
-    if "image" not in request.files:
-        return {"errors": "image required"}, 400
+        if request.files['imgURL'] is not None:
+            image = request.files['imgURL']
 
-    image = request.files["image"]
+            if not allowed_file(image.filename):
+                return {"errors": "file type not permitted"}, 400
 
-    if not allowed_file(image.filename):
-        return {"errors": "file type not permitted"}, 400
+            image.filename = get_unique_filename(image.filename)
+            upload = upload_file_to_s3(image)
+            if "url" not in upload:
+                return upload, 400
 
-    image.filename = get_unique_filename(image.filename)
-
-    upload = upload_file_to_s3(image)
-
-    if "url" not in upload:
-        return upload, 400
-
-    plant.imgURL = upload["url"]
+        plant.imgURL = upload["url"]
     db.session.add(plant)
     db.session.commit()
-    return plant.to_dict(), 200
+    return plant.to_dict()
 
 
 # PUT /api/plants/plantId

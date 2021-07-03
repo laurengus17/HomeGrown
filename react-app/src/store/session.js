@@ -71,15 +71,6 @@ export const logout = () => async (dispatch) => {
 
 
 export const signUp = (first_name, last_name, username, email, password, imgURL) => async (dispatch) => {
-  // const imageFormData = new FormData();
-  // imageFormData.append('image', image)
-
-  // const res = await fetch('/api/s3tester/s3_upload', {
-  //   method: 'POST',
-  //   body: imageFormData
-  // })
-  // const { url: imgURL, errors } = await res.json();
-  // console.log(errors)
 
   const formData = new FormData();
   formData.append('first_name', first_name);

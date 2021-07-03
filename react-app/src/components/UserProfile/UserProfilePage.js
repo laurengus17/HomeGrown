@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import './ProfilePage.css';
 
-function User() {
+function UserProfilePage() {
   const [user, setUser] = useState({});
   const { userId }  = useParams();
 
@@ -23,6 +24,9 @@ function User() {
   return (
     <ul>
       <li>
+        <img className='profile_photo' src={user.imgURL} alt='profile'></img>
+      </li>
+      <li>
         <strong>User Id</strong> {userId}
       </li>
       <li>
@@ -34,4 +38,4 @@ function User() {
     </ul>
   );
 }
-export default User;
+export default UserProfilePage;

@@ -13,7 +13,7 @@ return (
     </button>
     {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-        <AddPlantForm />
+        <AddPlantForm setShowModal={setShowModal}/>
         </Modal>
     )}
     </>
