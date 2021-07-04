@@ -16,7 +16,7 @@ def all_plants():
     return {"plants": [plant.to_dict() for plant in plants]}
 
 # GET /api/plants/userplants
-@plants_routes.route('/user/<int:userId>')
+@plants_routes.route('/user/<userId>')
 def user_plants(userId):
     plants = Plant.query.filter(Plant.userId == userId).all()
     return {"plants": [plant.to_dict() for plant in plants]}

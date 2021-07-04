@@ -50,9 +50,7 @@ const removePlant = (id) => {
 
 export const getPlants= () => async (dispatch) => {
     const res = await fetch(`/api/plants/`);
-    console.log('OUTSIDE THE IF BLOCKKKKK')
     if(res.ok) {
-        console.log('INSIDE THE IFFF BLOCKKKK')
         const plants = await res.json();
         dispatch(loadPlants(plants.plants));
         return res;
@@ -72,7 +70,7 @@ export const getUserPlants= (userId) => async (dispatch) => {
     const res = await fetch(`/api/plants/user/${userId}`);
     if(res.ok) {
         const plants = await res.json();
-        dispatch(loadUserPlants(plants));
+        dispatch(loadUserPlants(plants.plants));
         return res;
     }
 } 
