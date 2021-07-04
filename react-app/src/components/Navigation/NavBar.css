@@ -22,8 +22,10 @@
     margin: 15px;
     background-color: #D1ADCC;
     color: #5f2c3e;
-    font-weight: bold;
     border: 2px solid #5f2c3e;
+    font-family: 'Alegreya', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
 }
 
 .home_button:hover {
@@ -39,8 +41,10 @@
     margin: 15px 15px 15px 0;
     background-color: #D1ADCC;
     color: #5f2c3e;
-    font-weight: bold;
     border: 2px solid #5f2c3e;
+    font-family: 'Alegreya', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
 }
 
 .browse_button:hover {
