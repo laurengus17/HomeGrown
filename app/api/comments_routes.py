@@ -27,9 +27,13 @@ def create_comment():
     form = CommentForm()
     form['csrf_token'].data = request.cookies['csrf_token']
 
-    comment = Comment()
     if form.validate():
-        form.populate_obj(comment)
+        comment = Comment(
+            title=form.data['title'],
+            content=form.data['content'],
+            userId=form.data['userId'],
+            plantId=form.data['plantId']
+        )
 
     db.session.add(comment)
     db.session.commit()

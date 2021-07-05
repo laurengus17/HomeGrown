@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getPlant } from '../../store/plants';
 import PlantComments from '../Comments/PlantComments';
+import AddCommentModal from '../CommentForm/CommentModal';
 
 
 const PlantPage = () => {
@@ -14,9 +15,9 @@ const PlantPage = () => {
         dispatch(getPlant(plantId))
     }, [dispatch, plantId]);
 
-    if (!plant) {
-        return 404;
-    }
+    // if (!plant) {
+    //     return 404;
+    // }
 
     return (
         <>
@@ -29,7 +30,7 @@ const PlantPage = () => {
             <h2>Plant Care</h2><span>{plant.care}</span>   
         </div>
         <div>
-            <button>Add Comment</button>
+            <AddCommentModal plantId={plantId} />
         </div>
         <PlantComments plantId={plantId} />
         </>
