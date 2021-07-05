@@ -14,6 +14,11 @@ def all_comments():
     comments = Comment.query.all()
     return {"comments": [comment.to_dict() for comment in comments]}
 
+@comments_routes.route('/plant/<plantId>')
+def plant_comments(plantId):
+    comments = Comment.query.filter(Comment.plantId == plantId).all()
+    return {"comments": [comment.to_dict() for comment in comments]}
+
 
 # POST /api/comments
 @comments_routes.route('/new_comment', methods=["POST"])

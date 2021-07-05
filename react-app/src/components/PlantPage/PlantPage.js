@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getPlant } from '../../store/plants';
+import PlantComments from '../Comments/PlantComments';
 
 
 const PlantPage = () => {
@@ -30,6 +31,7 @@ const PlantPage = () => {
         <div>
             <button>Add Comment</button>
         </div>
+        <PlantComments plantId={plantId} />
         </>
     )
 }
