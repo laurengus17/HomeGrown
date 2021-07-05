@@ -15,9 +15,9 @@ const PlantPage = () => {
         dispatch(getPlant(plantId))
     }, [dispatch, plantId]);
 
-    // if (!plant) {
-    //     return 404;
-    // }
+    if (!plant) {
+        return null;
+    }
 
     return (
         <>

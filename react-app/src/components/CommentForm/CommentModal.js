@@ -13,7 +13,7 @@ return (
     </button>
     {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-        <CommentForm plantId={plantId} />
+        <CommentForm setShowModal={setShowModal} plantId={plantId} />
         </Modal>
     )}
     </>

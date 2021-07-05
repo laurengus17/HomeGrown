@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { createComment } from '../../store/comments';
+import { updateComment } from '../../store/comments';
 
-const CommentForm = ({ setShowModal, plantId }) => {
+const EditCommentForm = ({ setShowModal, comment, plantId }) => {
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user);
 
@@ -17,21 +17,22 @@ const CommentForm = ({ setShowModal, plantId }) => {
         setContent(e.target.value);
     };
 
-    const newComment = async (e) => {
+    const updateMyComment = async (e) => {
         e.preventDefault();
 
         const userId = user.id
+        const id = comment.id
 
-        let createdComment = await dispatch(createComment(title, content, userId, plantId));
-        if(createdComment) {
+        let updatedComment = await dispatch(updateComment(id, title, content, userId, plantId));
+        if(updatedComment) {
             setShowModal(false)
         }
     }
 
     return (
         <>
-        <h2>What Can You Tell Us About This Plant?</h2>
-        <form onSubmit={newComment}>
+        <h2>Update Your Comment:</h2>
+        <form onSubmit={updateMyComment}>
             <div>
                 <label>Title</label>
                 <input
@@ -55,4 +56,4 @@ const CommentForm = ({ setShowModal, plantId }) => {
 
 }
 
-export default CommentForm;
+export default EditCommentForm;
