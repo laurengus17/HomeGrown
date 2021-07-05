@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import UserPlants from '../UserPlants/UserPlants';
 import './ProfilePage.css';
 
 function UserProfilePage() {
@@ -22,20 +23,25 @@ function UserProfilePage() {
   }
 
   return (
-    <ul>
-      <li>
-        <img className='profile_photo' src={user.imgURL} alt='profile'></img>
-      </li>
-      <li>
-        <strong>User Id</strong> {userId}
-      </li>
-      <li>
-        <strong>Username</strong> {user.username}
-      </li>
-      <li>
-        <strong>Email</strong> {user.email}
-      </li>
-    </ul>
+    <div>
+      <ul>
+        <li>
+          <img className='profile_photo' src={user.imgURL} alt='profile'></img>
+        </li>
+        <li>
+          <strong>User Id</strong> {userId}
+        </li>
+        <li>
+          <strong>Username</strong> {user.username}
+        </li>
+        <li>
+          <strong>Email</strong> {user.email}
+        </li>
+      </ul>
+      <div>
+        <UserPlants userId={userId} />
+      </div>
+    </div>
   );
 }
 export default UserProfilePage;

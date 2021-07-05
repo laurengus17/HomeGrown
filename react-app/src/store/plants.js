@@ -50,9 +50,7 @@ const removePlant = (id) => {
 
 export const getPlants= () => async (dispatch) => {
     const res = await fetch(`/api/plants/`);
-    console.log('OUTSIDE THE IF BLOCKKKKK')
     if(res.ok) {
-        console.log('INSIDE THE IFFF BLOCKKKK')
         const plants = await res.json();
         dispatch(loadPlants(plants.plants));
         return res;
@@ -72,7 +70,7 @@ export const getUserPlants= (userId) => async (dispatch) => {
     const res = await fetch(`/api/plants/user/${userId}`);
     if(res.ok) {
         const plants = await res.json();
-        dispatch(loadUserPlants(plants));
+        dispatch(loadUserPlants(plants.plants));
         return res;
     }
 } 
@@ -105,9 +103,10 @@ export const createPlant = (name, description, imgURL, care, light, size, diffic
 
 }
 
-export const updatePlant = ({id, name, description, imgURL, care, light, size, difficulty, variety, userId }) => async (dispatch) => {
+export const updatePlant = (name, description, imgURL, care, light, size, difficulty, variety, userId, plantId) => async (dispatch) => {
 
     const formData = new FormData();
+    formData.append('id', plantId)
     formData.append('name', name);
     formData.append('description', description);
     formData.append('imgURL', imgURL);
@@ -118,7 +117,7 @@ export const updatePlant = ({id, name, description, imgURL, care, light, size, d
     formData.append('variety', variety);
     formData.append('userId', userId);
 
-    const res = await fetch(`/api/plants/${id}`, {
+    const res = await fetch(`/api/plants/${plantId}`, {
         method: 'PUT',
         body: formData
     });

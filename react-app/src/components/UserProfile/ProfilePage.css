@@ -5,3 +5,23 @@
     border-radius: 50%;
     transform: scale(1.5, 1.5);
 }
+
+
+/* user plants css */
+.user_plants_container {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    height: 250px;
+    width: 40%;
+    justify-content: space-between;
+    row-gap: 8px;
+    border: black 1px solid;
+    padding: 5px;
+    margin-left: 20px;
+}
+
+.plant_image {
+    width: 100px;
+    height: 100px;
+}

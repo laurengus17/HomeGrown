@@ -15,9 +15,9 @@ class Plant(db.Model):
     userId = db.Column(db.Integer, db.ForeignKey('users.id'), nullable = False)
 
     user = db.relationship('User', back_populates='plants')
-    greenhouse = db.relationship('Greenhouse', back_populates='plants')
-    wishlist = db.relationship('Wishlist', back_populates='plants')
-    comments = db.relationship('Comment', back_populates='plants')
+    greenhouse = db.relationship('Greenhouse', back_populates='plants', cascade="all, delete-orphan")
+    wishlist = db.relationship('Wishlist', back_populates='plants', cascade="all, delete-orphan")
+    comments = db.relationship('Comment', back_populates='plants', cascade="all, delete-orphan")
 
     def to_dict(self):
         return {
