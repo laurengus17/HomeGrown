@@ -50,6 +50,7 @@ function App() {
           <BrowseAllLandingPage />
         </Route>
         <Route path='/plants/:plantId'>
+          <NavBar />
           <PlantPage />
         </Route>
         <ProtectedRoute path='/users' exact={true} >

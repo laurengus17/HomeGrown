@@ -10,6 +10,13 @@ const loadComments = (comments) => {
     }
 }
 
+const loadPlantComments = (comments) => {
+    return {
+        type: LOAD_COMMENTS,
+        comments
+    }
+}
+
 const addComment = (comment) => {
     return {
         type: ADD_COMMENT,
@@ -41,9 +48,17 @@ export const getComments = () => async (dispatch) => {
     }
 }
 
-export const createComment = (comment) => async (dispatch) => {
-    const { title, content, userId, plantId } = comment;
+export const getPlantComments= (plantId) => async (dispatch) => {
+    const res = await fetch(`/api/comments/plant/${plantId}`);
+    if(res.ok) {
+        const comments = await res.json();
+        dispatch(loadPlantComments(comments.comments));
+        return res;
+    }
+} 
 
+export const createComment = (title, content, userId, plantId) => async (dispatch) => {
+    console.log(plantId)
     const formData = new FormData();
     formData.append('title', title);
     formData.append('content', content);
@@ -62,9 +77,10 @@ export const createComment = (comment) => async (dispatch) => {
     }
 }
 
-export const updateComment = ({id, title, content, userId, plantId }) => async (dispatch) => {
+export const updateComment = (id, title, content, userId, plantId) => async (dispatch) => {
 
     const formData = new FormData();
+    formData.append('id', id);
     formData.append('title', title);
     formData.append('content', content);
     formData.append('userId', userId);

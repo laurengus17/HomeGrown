@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
-import EditCommentForm from './EditCommentForm';
+import CommentForm from './CommentForm';
 
 
-function EditCommentModal({ comment, plantId }) {
+function AddCommentModal({ plantId }) {
 const [showModal, setShowModal] = useState(false);
 
 return (
     <>
     <button onClick={() => setShowModal(true)}>
-        <i className="fas fa-edit" />
+        Add Comment
     </button>
     {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-        <EditCommentForm plantId={plantId} comment={comment} setShowModal={setShowModal}/>
+        <CommentForm setShowModal={setShowModal} plantId={plantId} />
         </Modal>
     )}
     </>
 );
 }
 
-export default EditCommentModal;
+export default AddCommentModal;

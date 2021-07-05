@@ -14,6 +14,11 @@ def all_comments():
     comments = Comment.query.all()
     return {"comments": [comment.to_dict() for comment in comments]}
 
+@comments_routes.route('/plant/<plantId>')
+def plant_comments(plantId):
+    comments = Comment.query.filter(Comment.plantId == plantId).all()
+    return {"comments": [comment.to_dict() for comment in comments]}
+
 
 # POST /api/comments
 @comments_routes.route('/new_comment', methods=["POST"])
@@ -22,9 +27,13 @@ def create_comment():
     form = CommentForm()
     form['csrf_token'].data = request.cookies['csrf_token']
 
-    comment = Comment()
     if form.validate():
-        form.populate_obj(comment)
+        comment = Comment(
+            title=form.data['title'],
+            content=form.data['content'],
+            userId=form.data['userId'],
+            plantId=form.data['plantId']
+        )
 
     db.session.add(comment)
     db.session.commit()
