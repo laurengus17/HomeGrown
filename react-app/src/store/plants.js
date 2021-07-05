@@ -103,9 +103,10 @@ export const createPlant = (name, description, imgURL, care, light, size, diffic
 
 }
 
-export const updatePlant = ({id, name, description, imgURL, care, light, size, difficulty, variety, userId }) => async (dispatch) => {
+export const updatePlant = (name, description, imgURL, care, light, size, difficulty, variety, userId, plantId) => async (dispatch) => {
 
     const formData = new FormData();
+    formData.append('id', plantId)
     formData.append('name', name);
     formData.append('description', description);
     formData.append('imgURL', imgURL);
@@ -116,7 +117,7 @@ export const updatePlant = ({id, name, description, imgURL, care, light, size, d
     formData.append('variety', variety);
     formData.append('userId', userId);
 
-    const res = await fetch(`/api/plants/${id}`, {
+    const res = await fetch(`/api/plants/${plantId}`, {
         method: 'PUT',
         body: formData
     });

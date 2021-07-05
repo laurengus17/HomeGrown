@@ -10,6 +10,7 @@ import LandingPage from './components/LandingPage/LandingPage';
 import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
 import BrowseAllLandingPage from './components/BrowseAll/BrowseAllLandingPage';
+import PlantPage from './components/PlantPage/PlantPage';
 import { authenticate } from './store/session';
 
 function App() {
@@ -47,6 +48,9 @@ function App() {
         <Route path='/browse_all' exact={true}>
           <NavBar />
           <BrowseAllLandingPage />
+        </Route>
+        <Route path='/plants/:plantId'>
+          <PlantPage />
         </Route>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>

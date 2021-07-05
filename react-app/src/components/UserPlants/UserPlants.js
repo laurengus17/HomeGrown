@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { Modal } from "../../context/Modal";
 import { getUserPlants } from '../../store/plants'
 import UserSinglePlant from './UserSinglePlant';
 import '../UserProfile/ProfilePage.css'
