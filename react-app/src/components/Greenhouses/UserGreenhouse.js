@@ -9,8 +9,6 @@ const UserGreenhouse = () => {
     const greenhouseState = useSelector(state => state.greenhouses)
     const userGreenhouse = Object.values(greenhouseState)
     const { userId }  = useParams();
-    console.log(greenhouseState, "GREENHOUSE STATE")
-    console.log(userGreenhouse, "USER GREENHOUSE")
 
     useEffect(() => {
         dispatch(getUserGreenhouse(userId))
