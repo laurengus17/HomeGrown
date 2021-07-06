@@ -3,11 +3,15 @@ import thunk from 'redux-thunk';
 import session from './session'
 import plants from './plants'
 import comments from './comments'
+import wishlist from './wishlists'
+import greenhouses from './greenhouses'
 
 const rootReducer = combineReducers({
   session,
   plants,
-  comments
+  comments,
+  wishlist,
+  greenhouses
 });
 
 

@@ -12,6 +12,7 @@ import SignUpForm from './components/auth/SignUpForm';
 import BrowseAllLandingPage from './components/BrowseAll/BrowseAllLandingPage';
 import PlantPage from './components/PlantPage/PlantPage';
 import SearchResults from './components/SearchResults/SearchResults';
+import UserGreenhouse from './components/Greenhouses/UserGreenhouse';
 import { authenticate } from './store/session';
 
 function App() {
@@ -50,13 +51,17 @@ function App() {
           <NavBar />
           <BrowseAllLandingPage />
         </Route>
-        <Route path='/plants/:plantId'>
+        <Route path='/plants/:plantId' exact={true}>
           <NavBar />
           <PlantPage />
         </Route>
-        <Route path='/search/:searchedWord'>
+        <Route path='/search/:searchedWord' exact={true}>
           <NavBar />
           <SearchResults />
+        </Route>
+        <Route path='/greenhouse/:userId' exact={true}>
+          <NavBar />
+          <UserGreenhouse />
         </Route>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
