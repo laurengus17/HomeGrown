@@ -11,6 +11,7 @@ import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
 import BrowseAllLandingPage from './components/BrowseAll/BrowseAllLandingPage';
 import PlantPage from './components/PlantPage/PlantPage';
+import SearchResults from './components/SearchResults/SearchResults';
 import { authenticate } from './store/session';
 
 function App() {
@@ -52,6 +53,10 @@ function App() {
         <Route path='/plants/:plantId'>
           <NavBar />
           <PlantPage />
+        </Route>
+        <Route path='/search/:searchedWord'>
+          <NavBar />
+          <SearchResults />
         </Route>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
