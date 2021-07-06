@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import UserPlants from '../UserPlants/UserPlants';
+import UserWishlist from '../Wishlists/UserWishlist';
 import './ProfilePage.css';
 
 function UserProfilePage() {
@@ -39,7 +40,15 @@ function UserProfilePage() {
         </li>
       </ul>
       <div>
+        <h4>🪴 I Have Added:</h4>
         <UserPlants userId={userId} />
+      </div>
+      <div>
+        <div>
+          <i className="fas fa-leaf" />
+          <h4>one day I will grow...</h4>
+          <UserWishlist userId={userId} />
+        </div>
       </div>
     </div>
   );

@@ -58,7 +58,6 @@ export const getPlantComments= (plantId) => async (dispatch) => {
 } 
 
 export const createComment = (title, content, userId, plantId) => async (dispatch) => {
-    console.log(plantId)
     const formData = new FormData();
     formData.append('title', title);
     formData.append('content', content);

@@ -17,6 +17,10 @@ const NavBar = () => {
     history.push('/home')
   }
 
+  const handleWishlist = () => {
+    history.push(`/users/${user.id}`)
+  }
+
   return (
     <nav>
       <ul className='navbar_all_items'>
@@ -32,7 +36,7 @@ const NavBar = () => {
         <li className='right_navbar'>
           {user ? 
           <>
-          <button className='wishlist_button'>
+          <button className='wishlist_button' onClick={handleWishlist}>
             <i className="fas fa-leaf" />
           </button>
           <ProfileButton user={user} />

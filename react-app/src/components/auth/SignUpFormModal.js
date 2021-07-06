@@ -8,7 +8,7 @@ const [showModal, setShowModal] = useState(false);
 return (
     <>
     <button className='nav-signup' onClick={() => setShowModal(true)}>
-        <i class="fas fa-user-plus" />
+        <i className="fas fa-user-plus" />
     </button>
     {showModal && (
         <Modal onClose={() => setShowModal(false)}>
