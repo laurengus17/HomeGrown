@@ -31,7 +31,7 @@ export const getUserGreenhouse= (userId) => async (dispatch) => {
         dispatch(loadUserGreenhouse(greenhouses.greenhouses));
         return res;
     }
-} 
+}  
 
 export const createGreenhouse = (userId, plantIdInt) => async (dispatch) => {
     const formData = new FormData();

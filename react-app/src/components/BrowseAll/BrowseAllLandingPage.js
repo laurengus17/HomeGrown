@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { getPlants } from '../../store/plants'
+import { getPlants } from '../../store/plants';
 import PlantDisplay from '../PlantDisplay/PlantDisplay';
 import AddPlantModal from '../AddAPlant/AddPlantModal';
 import './BrowseAll.css'

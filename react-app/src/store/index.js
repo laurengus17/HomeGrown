@@ -5,13 +5,15 @@ import plants from './plants'
 import comments from './comments'
 import wishlist from './wishlists'
 import greenhouses from './greenhouses'
+import friends from './friends'
 
 const rootReducer = combineReducers({
   session,
   plants,
   comments,
   wishlist,
-  greenhouses
+  greenhouses,
+  friends
 });
 
 

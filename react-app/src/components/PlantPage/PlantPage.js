@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getPlant } from '../../store/plants';
+import { getPlant, getPlants } from '../../store/plants';
 import PlantComments from '../Comments/PlantComments';
 import AddCommentModal from '../CommentForm/CommentModal';
 import AddToWishlist from '../Wishlists/AddToWishlist';
@@ -13,6 +13,11 @@ const PlantPage = () => {
     const plant = useSelector(state => state.plants[plantId])
 
     useEffect(() => {
+        dispatch(getPlants())
+    }, [dispatch])
+
+    useEffect(() => {
+        console.log(plantId)
         dispatch(getPlant(plantId))
     }, [dispatch, plantId]);
 
