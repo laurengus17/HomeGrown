@@ -1,12 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
 import { getUserWishlist } from '../../store/wishlists';
 import WishListItem from './WishlistItem';
 
 const UserWishlist = ({ userId }) => {
     const dispatch = useDispatch();
-    const history = useHistory();
     const wishlistState = useSelector(state => state.wishlist)
     const userWishlist = Object.values(wishlistState)
 

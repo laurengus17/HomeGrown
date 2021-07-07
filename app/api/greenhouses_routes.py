@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, request, session
 from flask_login import login_required, current_user
-from app.models import Greenhouse
+from app.models import Greenhouse, Plant
 from app.models.db import db
 from app.forms.greenhouse_form import GreenhouseForm
 
