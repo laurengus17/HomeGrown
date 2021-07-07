@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import './NavBar.css'
 
 
 function ProfileButton({ user }) {
 const [showMenu, setShowMenu] = useState(false);
+const history = useHistory();
 
 useEffect(() => {
     const closeMenu = () => setShowMenu(false)
@@ -17,6 +18,10 @@ useEffect(() => {
 }, [showMenu])
 
 const switchMenu = () => setShowMenu(prevState => !prevState);
+
+const handleWishlist = () => {
+    history.push(`/users/${user.id}`)
+}
 
 return (
     <div>
@@ -37,9 +42,9 @@ return (
                     </Link>
                 </li>
                 <li>
-                    <Link to={`/friends/${user.id}`}>
-                        <div>{user.first_name}'s Friends</div>
-                    </Link>
+                    <button className='wishlist_button' onClick={handleWishlist}>
+                        <i className="fas fa-leaf" />
+                    </button>
                 </li>
                 <li>
                     <LogoutButton />

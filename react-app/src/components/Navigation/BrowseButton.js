@@ -22,16 +22,43 @@ return (
         {showMenu &&
             <ul className='browse_dropdown'>
                 <li>
-                    Placeholder- Variety 1
+                    Air Plant
                 </li>
                 <li>
-                    Placeholder- Variety 2
+                    Calathea
                 </li>
                 <li>
-                    Placeholder- Variety 3
+                    Fern
                 </li>
                 <li>
-                    Placeholder- Variety 4
+                    Fiddle Leaf Fig
+                </li>
+                <li>
+                    Flowers
+                </li>
+                <li>
+                    Money Tree
+                </li>
+                <li>
+                    Monstera
+                </li>
+                <li>
+                    Palm
+                </li>
+                <li>
+                    Peperomia
+                </li>
+                <li>
+                    Philodendron
+                </li>
+                <li>
+                    Pothos
+                </li>
+                <li>
+                    Snake Plant
+                </li>
+                <li>
+                    Succulent
                 </li>
             </ul>
         }

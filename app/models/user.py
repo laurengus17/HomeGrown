@@ -5,7 +5,7 @@ from flask_login import UserMixin
 friends = db.Table("friends",
     db.Column('userId', db.Integer, db.ForeignKey("users.id")),
     db.Column('friendId', db.Integer, db.ForeignKey("users.id")),
-    db.Column('confirmed', db.Boolean, default=False)
+    db.Column('confirmed', db.Boolean, default=True)
 )
 
 class User(db.Model, UserMixin):
@@ -52,4 +52,3 @@ class User(db.Model, UserMixin):
             'email': self.email,
             'imgURL': self.imgURL
         }
-
