@@ -30,35 +30,43 @@ const LoginForm = () => {
     return <Redirect to='/' />;
   }
 
+  const demoLogin = () => {
+    dispatch(login('demoMcdemo@demo.io', 'password'))
+  }
+
   return (
-    <form onSubmit={onLogin}>
-      <div>
-        {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
-        ))}
+    <div className='login_container'>
+      <div className='login_structure'>
+        <form onSubmit={onLogin}>
+          {/* <div>
+            {errors.map((error, ind) => (
+              <div key={ind}>{error}</div>
+            ))}
+          </div> */}
+          <h2 className='login_title'>Welcome Back</h2>
+          <div className='login_body'>
+            <input
+              className='input'
+              name='email'
+              type='text'
+              placeholder='Email'
+              value={email}
+              onChange={updateEmail}
+            />
+            <input
+              className='input'
+              name='password'
+              type='password'
+              placeholder='Password'
+              value={password}
+              onChange={updatePassword}
+            />
+          </div>
+            <button className='login_button' type='submit'>Log In</button>
+            <button className='demo_user' onClick={demoLogin}>Demo User</button>
+        </form>
       </div>
-      <div>
-        <label htmlFor='email'>Email</label>
-        <input
-          name='email'
-          type='text'
-          placeholder='Email'
-          value={email}
-          onChange={updateEmail}
-        />
-      </div>
-      <div>
-        <label htmlFor='password'>Password</label>
-        <input
-          name='password'
-          type='password'
-          placeholder='Password'
-          value={password}
-          onChange={updatePassword}
-        />
-        <button type='submit'>Login</button>
-      </div>
-    </form>
+    </div>
   );
 };
 

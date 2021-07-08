@@ -1,13 +1,13 @@
-.login_container {
+.comment_add_container {
     background-color: #4D774E;
 	border-radius: 15px;
-	height: 350px;
-	width: 350px;
+	height: 400px;
+	width: 450px;
 	position: relative;
 	overflow: hidden;
 }
 
-.login_structure {
+.comment_add_structure {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -16,14 +16,14 @@
     z-index: 5;
 }
 
-.login_title {
+.comment_add_title {
     color: #f6f2e9;
     font-size: 1.7em;
     text-align: center;
     font-family: 'Alegreya', sans-serif;
 }
 
-.login_body {
+.comment_add_body {
     border-radius: 15px;
     background-color: #f6f2e9;
     overflow: hidden;
@@ -46,8 +46,22 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.login_button,
-.demo_user {    
+.input_textarea {
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    display: block;
+    height: 80px;
+    line-height: 30px;
+    padding: 8px 15px;
+    border-bottom: 1px solid #f6f2e9;
+    width: 100%;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f6f2e9;
+}
+
+.comment_add_button {    
     background-color: rgba(0,0,0,0.4);
     color: #f6f2e9;
     border: 0;
@@ -64,8 +78,7 @@
     font-family: 'Alegreya', sans-serif;
 }
 
-.login_button:hover,
-.demo_user:hover {
+.comment_add_button:hover {
     background-color: #ffa903;
     box-shadow: 2px 2px 2px #9DC88D;
 }
