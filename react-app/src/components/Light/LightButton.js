@@ -17,7 +17,7 @@ const switchMenu = () => setShowMenu(prevState => !prevState);
 
 return (
     <>
-        <button className='light_button' onClick={switchMenu}>Browse</button>
+        <button className='light_button' onClick={switchMenu}>Light</button>
         {showMenu &&
             <ul className='light_dropdown'>
                 <li>
@@ -27,7 +27,7 @@ return (
                     Partially Shaded
                 </li>
                 <li>
-                    Lots Of Light
+                    Direct Sun
                 </li>
             </ul>
         }

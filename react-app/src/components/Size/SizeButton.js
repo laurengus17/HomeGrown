@@ -17,7 +17,7 @@ const switchMenu = () => setShowMenu(prevState => !prevState);
 
 return (
     <>
-        <button className='size_button' onClick={switchMenu}>Browse</button>
+        <button className='size_button' onClick={switchMenu}>Size</button>
         {showMenu &&
             <ul className='size_button'>
                 <li>
