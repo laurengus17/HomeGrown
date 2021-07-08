@@ -1,21 +1,63 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { getPlants } from '../../store/plants'
 
 
 const HomePage = () => {
-    const dispatch = useDispatch();
-    const plantState = useSelector(state => state.plants)
-    const plants = Object.values(plantState)
+    const [lowMaintenance, setLowMaintenance] = useState([]);
+    const [balcony, setBalcony] = useState([]);
+    const [small, setSmall] = useState([]);
 
     useEffect(() => {
-        dispatch(getPlants())
-    }, [dispatch])
+        (async() => {
+            const res = await fetch(`/api/plants/easy`);
+
+            if (res.ok) {
+                const data = await res.json();
+                setLowMaintenance(data.results);
+            }
+        })();
+    });
+
+    console.log(lowMaintenance)
+
+    useEffect(() => {
+        (async() => {
+            const res = await fetch(`/api/plants/balcony`);
+
+            if (res.ok) {
+                const data = await res.json();
+                setBalcony(data.results);
+            }
+        })();
+    });
+
+    console.log(balcony)
+
+    useEffect(() => {
+        (async() => {
+            const res = await fetch(`/api/plants/small`);
+
+            if (res.ok) {
+                const data = await res.json();
+                setSmall(data.results);
+            }
+        })();
+    });
+
+    console.log(small)
 
     return (
         <>
-            <h2>HELLO</h2>
+            <h2>Home Page</h2>
+            <div>
+                <h2>Low Maintenance</h2>
+            </div>
+            <div>
+                <h2>Balcony Lovers</h2>
+            </div>
+            <div>
+                <h2>Small Spaces, Small 🪴</h2>
+            </div>
             <Link to='/browse_all' exact={true}>
                 Browse All Plants
             </Link>

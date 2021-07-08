@@ -52,6 +52,23 @@ def single_plant(plantId):
     return plant.to_dict()
 
 
+@plants_routes.route('/easy')
+def plants_easy():
+    plants = Plant.query.filter(Plant.difficulty.ilike(f%{1}%)).all()
+    return {"plants": [plant.to_dict() for plant in plants]}
+
+@plants_routes.route('/balcony')
+def plants_balcony():
+    plants = Plant.query.filter(Plant.light.ilike(f%{high}%)).all()
+    return {"plants": [plant.to_dict() for plant in plants]}
+
+
+@plants_routes.route('/small')
+def plants_small():
+    plants = Plant.query.filter(Plant.size.ilike(f%{small}%)).all()
+    return {"plants": [plant.to_dict() for plant in plants]}
+
+
 # POST /api/plants
 @plants_routes.route('/new_plant', methods=["POST"])
 @login_required
