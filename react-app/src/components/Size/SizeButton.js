@@ -20,15 +20,15 @@ return (
         <button className='size_button' onClick={switchMenu}>Size</button>
         {showMenu &&
             <ul className='size_button'>
-                <li>
+                <Link to='/plants/size/small'>
                     Small
-                </li>
-                <li>
+                </Link>
+                <Link to='/plants/size/medium'>
                     Medium
-                </li>
-                <li>
+                </Link>
+                <Link to='/plants/size/large'>
                     Large/Tall
-                </li>
+                </Link>
             </ul>
         }
     </>

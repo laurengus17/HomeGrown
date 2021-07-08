@@ -75,6 +75,8 @@ export const getUserPlants= (userId) => async (dispatch) => {
     }
 } 
 
+// ALL FILTERS
+
 export const getEasyPlants = () => async (dispatch) => {
     const res = await fetch(`/api/plants/easy`);
     if (res.ok) {
@@ -98,6 +100,23 @@ export const getBalconyPlants = () => async (dispatch) => {
         dispatch(loadPlants(plants.plants));
     }
 }
+
+export const getLightPlants = (light) => async (dispatch) => {
+    const res = await fetch(`/api/plants/light/${light}`);
+    if (res.ok) {
+        const plants = await res.json();
+        dispatch(loadPlants(plants.plants));
+    }
+}
+
+export const getSizePlants = (size) => async (dispatch) => {
+    const res = await fetch(`/api/plants/size/${size}`);
+    if (res.ok) {
+        const plants = await res.json();
+        dispatch(loadPlants(plants.plants));
+    }
+}
+
 
 // POST, PUT, DELETE
 

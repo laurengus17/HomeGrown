@@ -1,16 +1,20 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import PlantDisplay from '../PlantDisplay/PlantDisplay';
-import { getEasyPlants } from '../../store/plants';
+import { getSizePlants } from '../../store/plants';
 
-const LowMaintenance = () => {
+const SmallPlantsLink = () => {
     const dispatch = useDispatch();
     const plantState = useSelector(state => state.plants)
     const plants = Object.values(plantState)
 
+    const size = 'small'
+
     useEffect(() => {
-        dispatch(getEasyPlants())
+        dispatch(getSizePlants(size))
     }, [dispatch])
+
+    console.log(plants)
 
     return (
         <>
@@ -27,4 +31,4 @@ const LowMaintenance = () => {
     )
 }
 
-export default LowMaintenance;
+export default SmallPlantsLink;

@@ -14,6 +14,14 @@ import PlantPage from './components/PlantPage/PlantPage';
 import SearchResults from './components/SearchResults/SearchResults';
 import UserGreenhouse from './components/Greenhouses/UserGreenhouse';
 import Footer from './components/Footer/Footer';
+import LowLight from './components/Light/LowLight';
+import AverageLight from './components/Light/MediumLight';
+import HighLight from './components/Light/HighLight';
+import SmallPlantsLink from './components/Size/SmallPlants';
+import MediumPlants from './components/Size/MediumPlants';
+import LargePlants from './components/Size/LargePlants';
+
+
 import { authenticate } from './store/session';
 
 function App() {
@@ -67,6 +75,36 @@ function App() {
         <Route path='/greenhouse/:userId' exact={true}>
           <NavBar />
           <UserGreenhouse />
+          <Footer />
+        </Route>
+        <Route path='/plants/light/low' exact={true}>
+          <NavBar />
+          <LowLight />
+          <Footer />
+        </Route>
+        <Route path='/plants/light/average' exact={true}>
+          <NavBar />
+          <AverageLight />
+          <Footer />
+        </Route>
+        <Route path='/plants/light/high' exact={true}>
+          <NavBar />
+          <HighLight />
+          <Footer />
+        </Route>
+        <Route path='/plants/size/small' exact={true}>
+          <NavBar />
+          <SmallPlantsLink />
+          <Footer />
+        </Route>
+        <Route path='/plants/size/medium' exact={true}>
+          <NavBar />
+          <MediumPlants />
+          <Footer />
+        </Route>
+        <Route path='/plants/size/large' exact={true}>
+          <NavBar />
+          <LargePlants />
           <Footer />
         </Route>
         <ProtectedRoute path='/users' exact={true} >

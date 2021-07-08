@@ -20,15 +20,15 @@ return (
         <button className='light_button' onClick={switchMenu}>Light</button>
         {showMenu &&
             <ul className='light_dropdown'>
-                <li>
+                <Link to='/plants/light/low'>
                     Low Light
-                </li>
-                <li>
+                </Link>
+                <Link to='/plants/light/average'>
                     Partially Shaded
-                </li>
-                <li>
+                </Link>
+                <Link to='/plants/light/high'>
                     Direct Sun
-                </li>
+                </Link>
             </ul>
         }
     </>

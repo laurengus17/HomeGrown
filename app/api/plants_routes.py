@@ -21,22 +21,22 @@ def user_plants(userId):
     plants = Plant.query.filter(Plant.userId == userId).all()
     return {"plants": [plant.to_dict() for plant in plants]}
 
+
+@plants_routes.route('/light/<light>')
+def plants_light(light):
+    plants = Plant.query.filter(Plant.light.ilike(light)).all()
+    return {"plants": [plant.to_dict() for plant in plants]}
+
 # GET /api/plants/variety
 @plants_routes.route('/<variety>')
 def plant_variety(variety):
     plants = Plant.query.filter(Plant.variety.like(variety)).all()
     return {"plants": [plant.to_dict() for plant in plants]}
 
-# GET /api/plants/light
-@plants_routes.route('/<light>')
-def plant_light(light):
-    plants = Plant.query.filter(Plant.light.like(light)).all()
-    return {"plants": [plant.to_dict() for plant in plants]}
-
 # GET /api/plants/size
-@plants_routes.route('/<size>')
+@plants_routes.route('/size/<size>')
 def plant_size(size):
-    plants = Plant.query.filter(Plant.size.like(size)).all()
+    plants = Plant.query.filter(Plant.size.ilike(size)).all()
     return {"plants": [plant.to_dict() for plant in plants]}
 
 # GET /api/plants/difficulty
@@ -67,6 +67,8 @@ def plants_balcony():
 def plants_small():
     plants = Plant.query.filter(Plant.size=='small')
     return {"plants": [plant.to_dict() for plant in plants]}
+
+
 
 
 # POST /api/plants
