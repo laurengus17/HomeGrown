@@ -48,7 +48,7 @@ const removePlant = (id) => {
 
 // GET thunks
 
-export const getPlants= () => async (dispatch) => {
+export const getPlants = () => async (dispatch) => {
     const res = await fetch(`/api/plants/`);
     if(res.ok) {
         const plants = await res.json();
@@ -57,7 +57,7 @@ export const getPlants= () => async (dispatch) => {
     }
 } 
 
-export const getPlant= (plantId) => async (dispatch) => {
+export const getPlant = (plantId) => async (dispatch) => {
     const res = await fetch(`/api/plants/${plantId}`);
     if(res.ok) {
         const plants = await res.json();
@@ -74,6 +74,65 @@ export const getUserPlants= (userId) => async (dispatch) => {
         return res;
     }
 } 
+
+// ALL FILTERS
+
+export const getEasyPlants = () => async (dispatch) => {
+    const res = await fetch(`/api/plants/easy`);
+    if (res.ok) {
+        const plants = await res.json();
+        dispatch(loadPlants(plants.plants));
+    }
+}
+
+export const getSmallPlants = () => async (dispatch) => {
+    const res = await fetch(`/api/plants/small`);
+    if (res.ok) {
+        const plants = await res.json();
+        dispatch(loadPlants(plants.plants));
+    }
+}
+
+export const getBalconyPlants = () => async (dispatch) => {
+    const res = await fetch(`/api/plants/balcony`);
+    if (res.ok) {
+        const plants = await res.json();
+        dispatch(loadPlants(plants.plants));
+    }
+}
+
+export const getLightPlants = (light) => async (dispatch) => {
+    const res = await fetch(`/api/plants/light/${light}`);
+    if (res.ok) {
+        const plants = await res.json();
+        dispatch(loadPlants(plants.plants));
+    }
+}
+
+export const getSizePlants = (size) => async (dispatch) => {
+    const res = await fetch(`/api/plants/size/${size}`);
+    if (res.ok) {
+        const plants = await res.json();
+        dispatch(loadPlants(plants.plants));
+    }
+}
+
+export const getDifficultyPlants = (difficulty) => async (dispatch) => {
+    const res = await fetch(`/api/plants/difficulty/${difficulty}`);
+    if (res.ok) {
+        const plants = await res.json();
+        dispatch(loadPlants(plants.plants));
+    }
+}
+
+
+export const getVarietyPlants = (variety) => async (dispatch) => {
+    const res = await fetch(`/api/plants/variety/${variety}`);
+    if (res.ok) {
+        const plants = await res.json();
+        dispatch(loadPlants(plants.plants));
+    }
+}
 
 // POST, PUT, DELETE
 

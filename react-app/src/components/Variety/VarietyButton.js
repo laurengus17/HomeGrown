@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
-import './NavBar.css'
 
-function BrowseButton () {
+function VarietyButton () {
 const [showMenu, setShowMenu] = useState(false);
 
 useEffect(() => {
@@ -18,9 +17,9 @@ const switchMenu = () => setShowMenu(prevState => !prevState);
 
 return (
     <>
-        <button className='browse_button' onClick={switchMenu}>Browse</button>
+        <button className='variety_button' onClick={switchMenu}>Variety</button>
         {showMenu &&
-            <ul className='browse_dropdown'>
+            <ul className='variety_button'>
                 <Link to='/plants/variety/airplants'>
                     Air Plant
                 </Link>
@@ -66,4 +65,4 @@ return (
 )
 
 }
-export default BrowseButton;
+export default VarietyButton;

@@ -3,6 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getPlants } from '../../store/plants';
 import PlantDisplay from '../PlantDisplay/PlantDisplay';
 import AddPlantModal from '../AddAPlant/AddPlantModal';
+import LightButton from '../Light/LightButton';
+import SizeButton from '../Size/SizeButton';
+import DifficultyButton from '../Difficulty/DifficultyButton';
+import VarietyButton from '../Variety/VarietyButton';
 import './BrowseAll.css'
 
 const BrowseAllLandingPage = () => {
@@ -17,10 +21,13 @@ const BrowseAllLandingPage = () => {
 
     return (
         <>
-            <h2>ALL PLANTS</h2>
             <h4>Don't See the plant you're looking for? Click Here: 
                 <AddPlantModal />
             </h4>
+            <LightButton />
+            <SizeButton />
+            <DifficultyButton />
+            <VarietyButton />
             <div className='plant_outer_container'>
                 {plants.map((plant) => 
                     <PlantDisplay plant={plant} />
