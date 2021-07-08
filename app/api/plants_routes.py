@@ -54,18 +54,18 @@ def single_plant(plantId):
 
 @plants_routes.route('/easy')
 def plants_easy():
-    plants = Plant.query.filter(Plant.difficulty.ilike(f%{1}%)).all()
+    plants = Plant.query.filter(Plant.difficulty=='1')
     return {"plants": [plant.to_dict() for plant in plants]}
 
 @plants_routes.route('/balcony')
 def plants_balcony():
-    plants = Plant.query.filter(Plant.light.ilike(f%{high}%)).all()
+    plants = Plant.query.filter(Plant.light=='high')
     return {"plants": [plant.to_dict() for plant in plants]}
 
 
 @plants_routes.route('/small')
 def plants_small():
-    plants = Plant.query.filter(Plant.size.ilike(f%{small}%)).all()
+    plants = Plant.query.filter(Plant.size=='small')
     return {"plants": [plant.to_dict() for plant in plants]}
 
 
