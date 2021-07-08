@@ -8,7 +8,7 @@ const Flowers = () => {
     const plantState = useSelector(state => state.plants)
     const plants = Object.values(plantState)
 
-    const variety = 'Flower'
+    const variety = 'Flowers'
 
     useEffect(() => {
         dispatch(getVarietyPlants(variety))
