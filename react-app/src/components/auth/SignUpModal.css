@@ -1,13 +1,13 @@
-.login_container {
+.signup_container {
     background-color: #4D774E;
 	border-radius: 15px;
-	height: 350px;
-	width: 350px;
+	height: 500px;
+	width: 400px;
 	position: relative;
 	overflow: hidden;
 }
 
-.login_structure {
+.signup_structure {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -16,18 +16,18 @@
     z-index: 5;
 }
 
-.login_title {
+.signup_title {
     color: #f6f2e9;
     font-size: 1.7em;
     text-align: center;
     font-family: 'Alegreya', sans-serif;
 }
 
-.login_body {
+.signup_body {
     border-radius: 15px;
     background-color: #f6f2e9;
     overflow: hidden;
-    margin-top: 40px;
+    margin-top: 15px;
     opacity: 1;
     visibility: visible;
 }
@@ -37,26 +37,26 @@
     outline: none;
     box-shadow: none;
     display: block;
-    height: 30px;
+    height: 28px;
     line-height: 30px;
     padding: 8px 15px;
-    border-bottom: 1px solid #f6f2e9;
     width: 100%;
     font-size: 12px;
     font-family: 'Roboto', sans-serif;
+    background-color: #f6f2e9;
 }
 
-.login_button,
+.signup_button,
 .demo_user {    
     background-color: rgba(0,0,0,0.4);
     color: #f6f2e9;
     border: 0;
     border-radius: 15px;
     display: block;
-    margin: 10px auto; 
-    padding: 12px 45px;
-    width: 80%;
-    font-size: 13px;
+    margin: 3px auto; 
+    padding: 8px 30px;
+    width: 70%;
+    font-size: 15px;
     font-weight: bold;
     cursor: pointer;
     opacity: 1;
@@ -64,8 +64,15 @@
     font-family: 'Alegreya', sans-serif;
 }
 
-.login_button:hover,
+.signup_button:hover,
 .demo_user:hover {
     background-color: #ffa903;
     box-shadow: 2px 2px 2px #9DC88D;
+}
+
+.profile_photo_label {
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 16px;
+    color: rgba(0,0,0,0.5);
 }
