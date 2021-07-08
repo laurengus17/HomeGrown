@@ -1,0 +1,72 @@
+.footer_container {
+    display: flex;
+    justify-content: center;
+    background: #4D774E;
+    bottom: 0px;
+    padding: 10px;
+    height: 80px;
+}
+
+.footer_left{
+    list-style: none;
+    display: flex;
+}
+
+.personal_link > i {
+    color: #D1ADCC;
+    margin: 2px;
+}
+
+.personal_link > i:hover {
+    color: #ffa903;
+    box-shadow: 2px 2px 2px #9DC88D;
+}
+
+.project_repo {
+    background-color: #D1ADCC;
+    color: #5f2c3e;
+    height: 18px;
+    padding: 5px;
+    margin: 4px;
+    border-radius: 2px;
+    font-weight: 600;
+    font-family: 'Alegreya', sans-serif;
+    font-size: 16px;
+    text-align: center;
+}
+
+.project_repo:hover {
+    background-color: #ffa903;
+    box-shadow: 2px 2px 2px #9DC88D;
+}
+
+.project_link {
+    text-decoration: none;
+    color: inherit;
+    padding-bottom: 4px;
+    margin: 4px;
+}
+
+.text {
+    padding: 4px;
+    margin: 2px;
+}
+
+.footer_right {
+    list-style: none;
+    display: flex;
+    margin: 5px;
+}
+
+.list_Lauren {
+    color: #f6f2e9;
+    font-weight: 500;
+    font-family: 'Alegreya', sans-serif;
+    font-style: italic;
+    text-shadow: 0.5px 0.5px 0.5px #ffa903;
+    font-size: 18px;
+}
+
+.space {
+    margin: 150px;
+}

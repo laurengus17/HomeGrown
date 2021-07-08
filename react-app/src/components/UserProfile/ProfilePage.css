@@ -1,3 +1,7 @@
+.profile_list {
+    list-style: none;
+}
+
 .profile_photo {
     height: 80px;
     width: 80px;

@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     background-color: #4D774E;
+    top: 0px;
 }
 
 .logo_img {
@@ -13,6 +14,7 @@
     list-style: none;
     display: flex;
 }
+
 
 .home_button {
     height: 28px;
@@ -53,21 +55,33 @@
 }
 
 .browse_dropdown {
-    margin-top: 50px;
-    margin-left: 200px;
+    top: 70px;
+    left: 300px;
     background-color: #f6f2e9;
     position: absolute;
-    height: 100px;
-    width: 170px;
+    height: 300px;
+    width: 120px;
     border-radius: 5px;
     border: 2px solid #5f2c3e;
     box-shadow: 5px 8px #5f2c3e;
-    text-align: center;
+    justify-content: center;
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+}
+
+.browse_dropdown > li {
+    font-family: 'Alegreya', sans-serif;
+    font-size: 16px;
+    align-self: start;
+    margin-left: 7px;
 }
 
 .browse_dropdown li:hover {
     background-color: #ffa903;
+    font-weight: bold;
 }
 
 .searchbar_div {
@@ -114,21 +128,37 @@
     display: flex;
 }
 
-.wishlist_button,
-.nav-signup {
+
+.nav-signup,
+.users_button {
     height: 28px;
     width: 35px;
     border-radius: 5px;
     transition: .2s ease-in;
-    margin: 15px;
+    margin-top: 15px;
+    margin-right: 5px;
     background-color: #D1ADCC;
     color: #5f2c3e;
     font-weight: bold;
     border: 2px solid #5f2c3e;
 }
 
+.wishlist_button {
+    height: 28px;
+    width: 35px;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    background-color: #D1ADCC;
+    color: #5f2c3e;
+    font-weight: bold;
+    border: 2px solid #5f2c3e;
+    margin-top: 15px;
+    margin-right: 5px;
+}
+
 .wishlist_button:hover,
-.nav-signup:hover {
+.nav-signup:hover,
+.users_button:hover {
     background-color: #ffa903;
     box-shadow: 2px 2px 2px #9DC88D;
 }
@@ -152,16 +182,30 @@
     box-shadow: 2px 2px 2px #9DC88D;
 }
 
+.link_profile {
+    text-decoration: none;
+}
+
+.link_user:hover {
+    background-color: #ffa903;
+    font-weight: bold;
+}
+
 .user_dropdown {
     background-color: #f6f2e9;
     position: absolute;
-    height: 100px;
-    width: 150px;
+    height: 150px;
+    width: 100px;
     border-radius: 5px;
     border: 2px solid #5f2c3e;
     box-shadow: 1px 8px #5f2c3e;
     list-style: none;
     right: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
 }
 
 .logout_button {
@@ -180,4 +224,19 @@
 .logout_button:hover {
     background-color: #ffa903;
     box-shadow: 2px 2px 2px #9DC88D;
+}
+
+.profile_image {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    transform: scale(1.5, 1.5);
+    flex-wrap: wrap;
+}
+
+.link_text {
+    font-family: 'Alegreya', sans-serif;
+    font-size: 16px;
+    right: 5px;
+    color: black;
 }

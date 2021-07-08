@@ -5,7 +5,7 @@ from app.models import db, User
 def seed_users():
     demo = User(
         first_name='Demo', last_name='McDemo', username='Demo', email='demoMcdemo@demo.io', 
-        password='password', imgURL='https://static.wikia.nocookie.net/twinpeaks/images/d/de/Harold_001.jpg/revision/latest/scale-to-width-down/2000?cb=20100423101150')
+        password='password', imgURL='https://1.bp.blogspot.com/-gGzDUMqfv4o/WN7wk3zHm3I/AAAAAAAAlR4/h2XjcsBmyJY5WXV-aJ6YA8uYe1XxmLhAwCLcB/s1600/Picture%2B9.png')
     david = User(
         first_name='David', last_name='Attenborough', username='davidA', email='davidA@borough.com', 
         password='password', imgURL='https://cdn.britannica.com/83/136183-050-28D77230/David-Attenborough-2008.jpg')

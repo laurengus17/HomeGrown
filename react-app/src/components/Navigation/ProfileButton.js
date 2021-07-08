@@ -19,10 +19,6 @@ useEffect(() => {
 
 const switchMenu = () => setShowMenu(prevState => !prevState);
 
-const handleWishlist = () => {
-    history.push(`/users/${user.id}`)
-}
-
 return (
     <div>
         <button className='user_button' onClick={switchMenu}>
@@ -31,20 +27,15 @@ return (
         </button>
         {showMenu &&
             <ul className='user_dropdown'>
-                <li>
-                    <Link to={`/users/${user.id}`}>
-                        <div>{user.first_name}'s profile</div>
+                <li className='link_user'>
+                    <Link to={`/users/${user.id}`} className='link_profile'>
+                        <p className='link_text'>{user.first_name}'s Profile</p>
                     </Link>
                 </li>
-                <li>
-                    <Link to={`/greenhouse/${user.id}`}>
-                        <div>{user.first_name}'s Greenhouse</div>
+                <li className='link_user'>
+                    <Link to={`/greenhouse/${user.id}`} className='link_profile'>
+                        <p className='link_text'>Greenhouse</p>
                     </Link>
-                </li>
-                <li>
-                    <button className='wishlist_button' onClick={handleWishlist}>
-                        <i className="fas fa-leaf" />
-                    </button>
                 </li>
                 <li>
                     <LogoutButton />
