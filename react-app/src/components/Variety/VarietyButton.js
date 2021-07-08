@@ -20,45 +20,45 @@ return (
         <button className='variety_button' onClick={switchMenu}>Variety</button>
         {showMenu &&
             <ul className='variety_button'>
-                <li>
+                <Link to='/plants/variety/airplants'>
                     Air Plant
-                </li>
-                <li>
+                </Link>
+                <Link to='/plants/variety/calatheas'>
                     Calathea
-                </li>
-                <li>
+                </Link>
+                <Link to='/plants/variety/ferns'>
                     Fern
-                </li>
-                <li>
+                </Link>
+                <Link to='/plants/variety/fiddleleaffigs'>
                     Fiddle Leaf Fig
-                </li>
-                <li>
+                </Link>
+                <Link to='/plants/variety/flowers'>
                     Flowers
-                </li>
-                <li>
+                </Link>
+                <Link to='/plants/variety/moneytrees'>
                     Money Tree
-                </li>
-                <li>
+                </Link>
+                <Link to='/plants/variety/monsteras'>
                     Monstera
-                </li>
-                <li>
+                </Link>
+                <Link to='/plants/variety/palms'>
                     Palm
-                </li>
-                <li>
+                </Link>
+                <Link to='/plants/variety/peperomias'>
                     Peperomia
-                </li>
-                <li>
+                </Link>
+                <Link to='/plants/variety/philodendron'>
                     Philodendron
-                </li>
-                <li>
+                </Link>
+                <Link to='/plants/variety/pothos'>
                     Pothos
-                </li>
-                <li>
+                </Link>
+                <Link to='/plants/variety/snakeplants'>
                     Snake Plant
-                </li>
-                <li>
+                </Link>
+                <Link to='/plants/variety/succulents'>
                     Succulent
-                </li>
+                </Link>
             </ul>
         }
     </>

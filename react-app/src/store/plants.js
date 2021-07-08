@@ -117,6 +117,22 @@ export const getSizePlants = (size) => async (dispatch) => {
     }
 }
 
+export const getDifficultyPlants = (difficulty) => async (dispatch) => {
+    const res = await fetch(`/api/plants/difficulty/${difficulty}`);
+    if (res.ok) {
+        const plants = await res.json();
+        dispatch(loadPlants(plants.plants));
+    }
+}
+
+
+export const getVarietyPlants = (variety) => async (dispatch) => {
+    const res = await fetch(`/api/plants/variety/${variety}`);
+    if (res.ok) {
+        const plants = await res.json();
+        dispatch(loadPlants(plants.plants));
+    }
+}
 
 // POST, PUT, DELETE
 

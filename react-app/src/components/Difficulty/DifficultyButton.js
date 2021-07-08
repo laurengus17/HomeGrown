@@ -20,12 +20,12 @@ return (
         <button className='difficulty_button' onClick={switchMenu}>Difficulty</button>
         {showMenu &&
             <ul className='difficulty_button'>
-                <li>
+                <Link to='/plants/difficulty/1'>
                     Low Maintenance
-                </li>
-                <li>
+                </Link>
+                <Link to='/plants/difficulty/5'>
                     Lots O' Care
-                </li>
+                </Link>
             </ul>
         }
     </>
