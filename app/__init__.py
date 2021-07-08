@@ -15,6 +15,7 @@ from .api.s3_tester_route import s3_tester_route
 from .api.wishlist_routes import wishlist_routes
 from .api.greenhouses_routes import greenhouses_routes
 
+
 from .seeds import seed_commands
 
 from .config import Config

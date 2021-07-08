@@ -24,8 +24,8 @@ const removeFriend = (id) => {
 }
 
 
-export const getUserFriends= (userId) => async (dispatch) => {
-    const res = await fetch(`/api/friends/${userId}`);
+export const getUserFriends= () => async (dispatch) => {
+    const res = await fetch(`/api/friends/`);
     if(res.ok) {
         const friends = await res.json();
         dispatch(loadFriends(friends.friends));
@@ -33,15 +33,12 @@ export const getUserFriends= (userId) => async (dispatch) => {
     }
 } 
 
-export const createFriend = (userId, friendId, confirmed) => async (dispatch) => {
-    const formData = new FormData();
-    formData.append('userId', userId);
-    formData.append('friendId', friendId);
-    formData.append('confirmed', confirmed)
+export const createFriend = (userId, friendId) => async (dispatch) => {
+    const confirmed = true
 
     const res = await fetch(`/api/friends/new_friend`, {
         method: "POST",
-        body: formData
+        body: JSON.stringify({ userId, friendId, confirmed })
     });
 
     if(res.ok) {

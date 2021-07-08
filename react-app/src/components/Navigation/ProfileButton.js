@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import './NavBar.css'
 
 
 function ProfileButton({ user }) {
 const [showMenu, setShowMenu] = useState(false);
+const history = useHistory();
 
 useEffect(() => {
     const closeMenu = () => setShowMenu(false)
@@ -26,19 +27,14 @@ return (
         </button>
         {showMenu &&
             <ul className='user_dropdown'>
-                <li>
-                    <Link to={`/users/${user.id}`}>
-                        <div>{user.first_name}'s profile</div>
+                <li className='link_user'>
+                    <Link to={`/users/${user.id}`} className='link_profile'>
+                        <p className='link_text'>{user.first_name}'s Profile</p>
                     </Link>
                 </li>
-                <li>
-                    <Link to={`/greenhouse/${user.id}`}>
-                        <div>{user.first_name}'s Greenhouse</div>
-                    </Link>
-                </li>
-                <li>
-                    <Link to={`/friends/${user.id}`}>
-                        <div>{user.first_name}'s Friends</div>
+                <li className='link_user'>
+                    <Link to={`/greenhouse/${user.id}`} className='link_profile'>
+                        <p className='link_text'>Greenhouse</p>
                     </Link>
                 </li>
                 <li>

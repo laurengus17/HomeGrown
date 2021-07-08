@@ -13,6 +13,7 @@ import BrowseAllLandingPage from './components/BrowseAll/BrowseAllLandingPage';
 import PlantPage from './components/PlantPage/PlantPage';
 import SearchResults from './components/SearchResults/SearchResults';
 import UserGreenhouse from './components/Greenhouses/UserGreenhouse';
+import Footer from './components/Footer/Footer';
 import { authenticate } from './store/session';
 
 function App() {
@@ -46,22 +47,27 @@ function App() {
         <Route path='/home' exact={true}>
           <NavBar />
           <HomePage />
+          <Footer />
         </Route>
         <Route path='/browse_all' exact={true}>
           <NavBar />
           <BrowseAllLandingPage />
+          <Footer />
         </Route>
         <Route path='/plants/:plantId' exact={true}>
           <NavBar />
           <PlantPage />
+          <Footer />
         </Route>
         <Route path='/search/:searchedWord' exact={true}>
           <NavBar />
           <SearchResults />
+          <Footer />
         </Route>
         <Route path='/greenhouse/:userId' exact={true}>
           <NavBar />
           <UserGreenhouse />
+          <Footer />
         </Route>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
@@ -69,6 +75,7 @@ function App() {
         <ProtectedRoute path='/users/:userId' exact={true} >
           <NavBar />
           <UserProfilePage />
+          <Footer />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

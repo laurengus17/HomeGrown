@@ -25,7 +25,7 @@ function UserProfilePage() {
 
   return (
     <div>
-      <ul>
+      <ul className='profile_list'>
         <li>
           <img className='profile_photo' src={user.imgURL} alt='profile'></img>
         </li>
