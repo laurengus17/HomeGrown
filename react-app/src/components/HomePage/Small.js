@@ -5,7 +5,7 @@ import { getSmallPlants } from '../../store/plants';
 
 const Small = () => {
     const dispatch = useDispatch();
-    const plantState = useSelector(state => state.plants)
+    const plantState = useSelector(state => state.plants.size)
     const plants = Object.values(plantState)
 
     useEffect(() => {

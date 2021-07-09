@@ -1,0 +1,11 @@
+.user_greenhouse_container {
+    background-image: url(../../images/greenhouse.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 5px;
+}
+
+.plant_image {
+    border-radius: 7px;
+}

@@ -1,4 +1,7 @@
 const LOAD_PLANTS = 'plants/loadPlants';
+const LOAD_EASY = 'plants/loadEasy';
+const LOAD_BALCONY = 'plants/loadBalcony';
+const LOAD_SIZE = 'plants/loadSize';
 const LOAD_PLANT = 'plants/loadPlant';
 const ADD_PLANT = 'plants/addPlant';
 const EDIT_PLANT = 'plants/editPlant';
@@ -7,6 +10,27 @@ const REMOVE_PLANT = 'plants/removePlant';
 const loadPlants = (plants) => {
     return {
         type: LOAD_PLANTS,
+        plants
+    }
+}
+
+const loadEasy = (plants) => {
+    return {
+        type: LOAD_EASY,
+        plants
+    }
+}
+
+const loadBalcony = (plants) => {
+    return {
+        type: LOAD_BALCONY,
+        plants
+    }
+}
+
+const loadSize = (plants) => {
+    return {
+        type: LOAD_SIZE,
         plants
     }
 }
@@ -81,7 +105,7 @@ export const getEasyPlants = () => async (dispatch) => {
     const res = await fetch(`/api/plants/easy`);
     if (res.ok) {
         const plants = await res.json();
-        dispatch(loadPlants(plants.plants));
+        dispatch(loadEasy(plants.plants));
     }
 }
 
@@ -89,7 +113,7 @@ export const getSmallPlants = () => async (dispatch) => {
     const res = await fetch(`/api/plants/small`);
     if (res.ok) {
         const plants = await res.json();
-        dispatch(loadPlants(plants.plants));
+        dispatch(loadSize(plants.plants));
     }
 }
 
@@ -97,7 +121,7 @@ export const getBalconyPlants = () => async (dispatch) => {
     const res = await fetch(`/api/plants/balcony`);
     if (res.ok) {
         const plants = await res.json();
-        dispatch(loadPlants(plants.plants));
+        dispatch(loadBalcony(plants.plants));
     }
 }
 
@@ -199,15 +223,33 @@ export const deletePlant = (plantId) => async (dispatch) => {
 }
 
 
-const initialState = {}
+const initialState = {all: {}, easy: {}, balcony: {}, size: {}}
 
 const plantsReducer = (state = initialState, action) => {
     let newState;
     switch (action.type) {
         case LOAD_PLANTS:
-            newState = {};
+            newState = {...state, all:{}};
             action.plants.forEach((plant) => {
-                newState[plant.id] = plant;
+                newState.all[plant.id] = plant;
+            });
+            return newState
+        case LOAD_EASY:
+            newState = {...state, easy: {}};
+            action.plants.forEach((plant) => {
+                newState.easy[plant.id] = plant;
+            });
+            return newState
+        case LOAD_BALCONY:
+            newState = {...state, balcony: {}};
+            action.plants.forEach((plant) => {
+                newState.balcony[plant.id] = plant;
+            });
+            return newState
+        case LOAD_SIZE:
+            newState = {...state, size: {}};
+            action.plants.forEach((plant) => {
+                newState.size[plant.id] = plant;
             });
             return newState
         case LOAD_PLANT:

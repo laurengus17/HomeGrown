@@ -10,7 +10,7 @@ import AddToGreenhouse from '../Greenhouses/AddToGreenhouse';
 const PlantPage = () => {
     const dispatch = useDispatch();
     const { plantId } = useParams(); 
-    const plant = useSelector(state => state.plants[plantId])
+    const plant = useSelector(state => state.plants.all[plantId])
 
     useEffect(() => {
         dispatch(getPlants())

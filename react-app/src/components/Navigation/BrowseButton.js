@@ -21,45 +21,76 @@ return (
         <button className='browse_button' onClick={switchMenu}>Browse</button>
         {showMenu &&
             <ul className='browse_dropdown'>
-                <Link to='/plants/variety/airplants'>
+               <li>
+                <Link className='link' to='/plants/variety/airplants'>
                     Air Plant
                 </Link>
-                <Link to='/plants/variety/calatheas'>
+                </li>
+                <li>
+                <Link className='link' to='/plants/variety/calatheas'>
                     Calathea
                 </Link>
-                <Link to='/plants/variety/ferns'>
+                </li>
+                <li>
+                <Link className='link' to='/plants/variety/ferns'>
                     Fern
                 </Link>
-                <Link to='/plants/variety/fiddleleaffigs'>
+                </li>
+                <li>
+                <Link className='link' to='/plants/variety/fiddleleaffigs'>
                     Fiddle Leaf Fig
                 </Link>
-                <Link to='/plants/variety/flowers'>
+                </li>
+                <li>
+                <Link className='link' to='/plants/variety/flowers'>
                     Flowers
                 </Link>
-                <Link to='/plants/variety/moneytrees'>
+                </li>
+                <li>
+                <Link className='link' to='/plants/variety/moneytrees'>
                     Money Tree
                 </Link>
-                <Link to='/plants/variety/monsteras'>
+                </li>
+                <li>
+                <Link className='link' to='/plants/variety/monsteras'>
                     Monstera
                 </Link>
-                <Link to='/plants/variety/palms'>
+                </li>
+                <li>
+                <Link className='link' to='/plants/variety/palms'>
                     Palm
                 </Link>
-                <Link to='/plants/variety/peperomias'>
+                </li>
+                <li>
+                <Link className='link' to='/plants/variety/peperomias'>
                     Peperomia
                 </Link>
-                <Link to='/plants/variety/philodendron'>
+                </li>
+                <li>
+                <Link className='link' to='/plants/variety/philodendron'>
                     Philodendron
                 </Link>
-                <Link to='/plants/variety/pothos'>
+                </li>
+                <li>
+                <Link className='link' to='/plants/variety/pothos'>
                     Pothos
                 </Link>
-                <Link to='/plants/variety/snakeplants'>
+                </li>
+                <li>
+                <Link className='link' to='/plants/variety/snakeplants'>
                     Snake Plant
                 </Link>
-                <Link to='/plants/variety/succulents'>
+                </li>
+                <li>
+                <Link className='link' to='/plants/variety/succulents'>
                     Succulent
                 </Link>
+                </li>
+                <li>
+                <Link className='link' to='/browse_all'>
+                    All Plants
+                </Link>
+                </li>
             </ul>
         }
     </>

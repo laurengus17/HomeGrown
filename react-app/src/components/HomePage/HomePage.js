@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import LowMaintenance from './LowMaintenance';
 import Small from './Small'
 import Balcony from './Balcony';
+import { useDispatch, useSelector } from 'react-redux';
+import { getPlants } from '../../store/plants';
 import './HomePage.css'
 
 const HomePage = () => {
+    const dispatch = useDispatch();
+    const plantState = useSelector(state => state.plants.all)
+    const plants = Object.values(plantState)
+
+    useEffect(() => {
+        dispatch(getPlants())
+    }, [dispatch])
 
     return (
         <div>

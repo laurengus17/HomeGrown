@@ -59,7 +59,7 @@
     left: 300px;
     background-color: #f6f2e9;
     position: absolute;
-    height: 300px;
+    height: 320px;
     width: 120px;
     border-radius: 5px;
     border: 2px solid #5f2c3e;
@@ -76,7 +76,7 @@
     font-family: 'Alegreya', sans-serif;
     font-size: 16px;
     align-self: start;
-    margin-left: 7px;
+    margin-left: 10px;
 }
 
 .browse_dropdown li:hover {

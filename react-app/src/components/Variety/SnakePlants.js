@@ -7,7 +7,7 @@ import './Varieties.css';
 
 const SnakePlants = () => {
     const dispatch = useDispatch();
-    const plantState = useSelector(state => state.plants)
+    const plantState = useSelector(state => state.plants.all)
     const plants = Object.values(plantState)
 
     const variety = 'Snake Plant'

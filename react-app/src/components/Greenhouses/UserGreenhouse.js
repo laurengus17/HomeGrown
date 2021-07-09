@@ -4,13 +4,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUserGreenhouse } from '../../store/greenhouses';
 import { getPlants } from '../../store/plants';
 import GreenhousePlant from './GreenhousePlant';
+import './Greenhouse.css';
+
 
 const UserGreenhouse = () => {
     const dispatch = useDispatch();
     const { userId }  = useParams();
     const greenhouseState = useSelector(state => state.greenhouses)
     const userGreenhouse = Object.values(greenhouseState)
-    const plantState = useSelector(state => state.plants)
+    const plantState = useSelector(state => state.plants.all)
     const plants = Object.values(plantState)
 
     useEffect(() => {
