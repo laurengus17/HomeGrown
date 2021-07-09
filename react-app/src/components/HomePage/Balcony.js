@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import PlantDisplay from '../PlantDisplay/PlantDisplay';
-import { getBalconyPlants } from '../../store/plants';
+import { getLightPlants } from '../../store/plants'; 
 
 const Balcony = () => {
     const dispatch = useDispatch();
@@ -9,8 +9,10 @@ const Balcony = () => {
     const plants = Object.values(plantState)
 
     useEffect(() => {
-        dispatch(getBalconyPlants())
+        dispatch(getLightPlants())
     }, [dispatch])
+
+    console.log(plants, 'BALCONY')
 
     return (
         <>

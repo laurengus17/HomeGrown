@@ -12,6 +12,8 @@ const Small = () => {
         dispatch(getSmallPlants())
     }, [dispatch])
 
+    console.log(plants, 'SMALL')
+
     return (
         <>
         {plants.length ?

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
+import '../BrowseAll/BrowseAll.css'
 
 function SizeButton () {
 const [showMenu, setShowMenu] = useState(false);
@@ -19,16 +20,22 @@ return (
     <>
         <button className='size_button' onClick={switchMenu}>Size</button>
         {showMenu &&
-            <ul className='size_button'>
-                <Link to='/plants/size/small'>
+            <ul className='size_dropdown'>
+                <li>
+                <Link className='link' to='/plants/size/small'>
                     Small
                 </Link>
-                <Link to='/plants/size/medium'>
+                </li>
+                <li>
+                <Link className='link' to='/plants/size/medium'>
                     Medium
                 </Link>
-                <Link to='/plants/size/large'>
+                </li>
+                <li>
+                <Link className='link' to='/plants/size/large'>
                     Large/Tall
                 </Link>
+                </li>
             </ul>
         }
     </>

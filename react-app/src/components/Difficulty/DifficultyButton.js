@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
+import '../BrowseAll/BrowseAll.css'
 
 function DifficultyButton () {
 const [showMenu, setShowMenu] = useState(false);
@@ -19,13 +20,17 @@ return (
     <>
         <button className='difficulty_button' onClick={switchMenu}>Difficulty</button>
         {showMenu &&
-            <ul className='difficulty_button'>
-                <Link to='/plants/difficulty/1'>
+            <ul className='difficulty_dropdown'>
+                <li>
+                <Link className='link' to='/plants/difficulty/1'>
                     Low Maintenance
                 </Link>
-                <Link to='/plants/difficulty/5'>
+                </li>
+                <li>
+                <Link className='link' to='/plants/difficulty/5'>
                     Lots O' Care
                 </Link>
+                </li>
             </ul>
         }
     </>
