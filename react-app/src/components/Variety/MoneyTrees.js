@@ -6,7 +6,7 @@ import { getVarietyPlants } from '../../store/plants';
 
 const MoneyTrees = () => {
     const dispatch = useDispatch();
-    const plantState = useSelector(state => state.plants)
+    const plantState = useSelector(state => state.plants.all)
     const plants = Object.values(plantState)
 
     const variety = 'Money Tree'

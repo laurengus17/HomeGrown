@@ -6,7 +6,7 @@ import '../UserProfile/ProfilePage.css'
 
 const UserPlants = ({ userId }) => {
     const dispatch = useDispatch();
-    const plantState = useSelector(state => state.plants)
+    const plantState = useSelector(state => state.plants.all)
     const userPlants = Object.values(plantState)
 
 

@@ -5,7 +5,7 @@ import { getEasyPlants } from '../../store/plants';
 
 const LowMaintenance = () => {
     const dispatch = useDispatch();
-    const plantState = useSelector(state => state.plants)
+    const plantState = useSelector(state => state.plants.easy)
     const plants = Object.values(plantState)
 
     useEffect(() => {

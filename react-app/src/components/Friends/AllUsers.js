@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux'
-import { useHistory } from 'react-router-dom';
-import AddFriend from './AddFriend';
-import friendsReducer from '../../store/friends';
+import { useSelector } from 'react-redux'
 
 function AllUsers() {
     const [users, setUsers] = useState([]);

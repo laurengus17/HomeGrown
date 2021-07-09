@@ -12,7 +12,7 @@ const UserGreenhouse = () => {
     const { userId }  = useParams();
     const greenhouseState = useSelector(state => state.greenhouses)
     const userGreenhouse = Object.values(greenhouseState)
-    const plantState = useSelector(state => state.plants)
+    const plantState = useSelector(state => state.plants.all)
     const plants = Object.values(plantState)
 
     useEffect(() => {

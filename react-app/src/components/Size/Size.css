@@ -1,0 +1,30 @@
+.plant_display_container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 5px;
+    column-gap: 5px;
+    margin: 0 8px 8px 8px;
+    align-self: center;
+}
+
+.size_title {
+    text-align: center;
+    font-family: 'Alegreya', sans-serif;
+}
+
+.browse_link_div {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding: 4px;
+}
+
+.back_browse_all {
+    font-family: 'Alegreya', sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}

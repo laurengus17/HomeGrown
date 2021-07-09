@@ -7,7 +7,7 @@ import PlantDisplay from '../PlantDisplay/PlantDisplay';
 
 const WishListItem = ({ wishlist, userId }) => {
     const dispatch = useDispatch()
-    const plantState = useSelector(state => state.plants)
+    const plantState = useSelector(state => state.plants.all)
     const plants = Object.values(plantState)
 
     const handleDelete = async (id) => {
