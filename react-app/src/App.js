@@ -196,7 +196,9 @@ function App() {
           <Footer />
         </Route>
         <ProtectedRoute path='/users' exact={true} >
+          <NavBar />
           <UsersList/>
+          <Footer />
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <NavBar />

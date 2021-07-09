@@ -1,4 +1,5 @@
 const LOAD_PLANTS = 'plants/loadPlants';
+const LOAD_LISTS = 'plants/loadLists';
 const LOAD_PLANT = 'plants/loadPlant';
 const ADD_PLANT = 'plants/addPlant';
 const EDIT_PLANT = 'plants/editPlant';
@@ -7,6 +8,13 @@ const REMOVE_PLANT = 'plants/removePlant';
 const loadPlants = (plants) => {
     return {
         type: LOAD_PLANTS,
+        plants
+    }
+}
+
+const loadLists = (plants) => {
+    return {
+        type: LOAD_LISTS,
         plants
     }
 }
@@ -81,7 +89,7 @@ export const getEasyPlants = () => async (dispatch) => {
     const res = await fetch(`/api/plants/easy`);
     if (res.ok) {
         const plants = await res.json();
-        dispatch(loadPlants(plants.plants));
+        dispatch(loadLists(plants.plants));
     }
 }
 
@@ -89,7 +97,7 @@ export const getSmallPlants = () => async (dispatch) => {
     const res = await fetch(`/api/plants/small`);
     if (res.ok) {
         const plants = await res.json();
-        dispatch(loadPlants(plants.plants));
+        dispatch(loadLists(plants.plants));
     }
 }
 
@@ -97,7 +105,7 @@ export const getBalconyPlants = () => async (dispatch) => {
     const res = await fetch(`/api/plants/balcony`);
     if (res.ok) {
         const plants = await res.json();
-        dispatch(loadPlants(plants.plants));
+        dispatch(loadLists(plants.plants));
     }
 }
 
@@ -205,6 +213,12 @@ const plantsReducer = (state = initialState, action) => {
     let newState;
     switch (action.type) {
         case LOAD_PLANTS:
+            newState = {};
+            action.plants.forEach((plant) => {
+                newState[plant.id] = plant;
+            });
+            return newState
+        case LOAD_LISTS:
             newState = {};
             action.plants.forEach((plant) => {
                 newState[plant.id] = plant;

@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUserGreenhouse } from '../../store/greenhouses';
 import { getPlants } from '../../store/plants';
 import GreenhousePlant from './GreenhousePlant';
+import './Greenhouse.css';
+
 
 const UserGreenhouse = () => {
     const dispatch = useDispatch();
