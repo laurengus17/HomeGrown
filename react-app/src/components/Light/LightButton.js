@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
+import '../BrowseAll/BrowseAll.css'
 
 function LightButton () {
 const [showMenu, setShowMenu] = useState(false);
@@ -20,15 +21,21 @@ return (
         <button className='light_button' onClick={switchMenu}>Light</button>
         {showMenu &&
             <ul className='light_dropdown'>
-                <Link to='/plants/light/low'>
-                    Low Light
-                </Link>
-                <Link to='/plants/light/average'>
-                    Partially Shaded
-                </Link>
-                <Link to='/plants/light/high'>
-                    Direct Sun
-                </Link>
+                <li>
+                    <Link className='link' to='/plants/light/low'>
+                        Low Light
+                    </Link>
+                </li>
+                <li>
+                    <Link className='link' to='/plants/light/average'>
+                        Partially Shaded
+                    </Link>
+                </li>
+                <li>
+                    <Link className='link' to='/plants/light/high'>
+                        Direct Sun
+                    </Link>
+                </li>
             </ul>
         }
     </>

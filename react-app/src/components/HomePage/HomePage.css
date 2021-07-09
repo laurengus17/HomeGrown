@@ -1,0 +1,32 @@
+.home_container {
+    display: grid;
+    width: 70%;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 50px;
+    margin: 0 8px 8px 20px;
+    align-self: center;
+}
+
+.home_title {
+    text-align: center;
+    font-family: 'Alegreya', sans-serif;
+}
+
+.list_title {
+    font-family: 'Alegreya', sans-serif;
+    text-align: center;
+}
+
+.list_container {
+    height: 300px;
+    width: 300px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    
+}
+
+.browse_link {
+    text-align: center;
+    font-family: 'Alegreya', sans-serif;
+    margin: 20px;
+}

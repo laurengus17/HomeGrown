@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
+import '../BrowseAll/BrowseAll.css'
 
 function VarietyButton () {
 const [showMenu, setShowMenu] = useState(false);
@@ -19,46 +20,72 @@ return (
     <>
         <button className='variety_button' onClick={switchMenu}>Variety</button>
         {showMenu &&
-            <ul className='variety_button'>
-                <Link to='/plants/variety/airplants'>
+            <ul className='variety_dropdown'>
+                <li>
+                <Link className='link' to='/plants/variety/airplants'>
                     Air Plant
                 </Link>
-                <Link to='/plants/variety/calatheas'>
+                </li>
+                <li>
+                <Link className='link' to='/plants/variety/calatheas'>
                     Calathea
                 </Link>
-                <Link to='/plants/variety/ferns'>
+                </li>
+                <li>
+                <Link className='link' to='/plants/variety/ferns'>
                     Fern
                 </Link>
-                <Link to='/plants/variety/fiddleleaffigs'>
+                </li>
+                <li>
+                <Link className='link' to='/plants/variety/fiddleleaffigs'>
                     Fiddle Leaf Fig
                 </Link>
-                <Link to='/plants/variety/flowers'>
+                </li>
+                <li>
+                <Link className='link' to='/plants/variety/flowers'>
                     Flowers
                 </Link>
-                <Link to='/plants/variety/moneytrees'>
+                </li>
+                <li>
+                <Link className='link' to='/plants/variety/moneytrees'>
                     Money Tree
                 </Link>
-                <Link to='/plants/variety/monsteras'>
+                </li>
+                <li>
+                <Link className='link' to='/plants/variety/monsteras'>
                     Monstera
                 </Link>
-                <Link to='/plants/variety/palms'>
+                </li>
+                <li>
+                <Link className='link' to='/plants/variety/palms'>
                     Palm
                 </Link>
-                <Link to='/plants/variety/peperomias'>
+                </li>
+                <li>
+                <Link className='link' to='/plants/variety/peperomias'>
                     Peperomia
                 </Link>
-                <Link to='/plants/variety/philodendron'>
+                </li>
+                <li>
+                <Link className='link' to='/plants/variety/philodendron'>
                     Philodendron
                 </Link>
-                <Link to='/plants/variety/pothos'>
+                </li>
+                <li>
+                <Link className='link' to='/plants/variety/pothos'>
                     Pothos
                 </Link>
-                <Link to='/plants/variety/snakeplants'>
+                </li>
+                <li>
+                <Link className='link' to='/plants/variety/snakeplants'>
                     Snake Plant
                 </Link>
-                <Link to='/plants/variety/succulents'>
+                </li>
+                <li>
+                <Link className='link' to='/plants/variety/succulents'>
                     Succulent
                 </Link>
+                </li>
             </ul>
         }
     </>

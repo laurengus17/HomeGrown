@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
 import AddPlantForm from './AddPlantForm';
-
+import '../BrowseAll/BrowseAll.css';
 
 function AddPlantModal() {
 const [showModal, setShowModal] = useState(false);
 
 return (
     <>
-    <button onClick={() => setShowModal(true)}>
+    <button className='add_button_modal' onClick={() => setShowModal(true)}>
         🪴
     </button>
     {showModal && (

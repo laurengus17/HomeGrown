@@ -9,7 +9,6 @@ const PlantDisplay = ({ plant }) => {
             <div className='plant_container'>
                 <img src={plant.imgURL} alt={plant.name} className='plant_img'/>
                 <div>{plant.name}</div>
-                <div>{plant.variety}</div>
             </div>
             </Link>
     )

@@ -21,13 +21,15 @@ const BrowseAllLandingPage = () => {
 
     return (
         <>
-            <h4>Don't See the plant you're looking for? Click Here: 
+            <h4 className='add_plant_link'>Don't see the plant you're looking for? Click Here:   
                 <AddPlantModal />
             </h4>
-            <LightButton />
-            <SizeButton />
-            <DifficultyButton />
-            <VarietyButton />
+            <div className='filter_container'>
+                <LightButton />
+                <SizeButton />
+                <DifficultyButton />
+                <VarietyButton />
+            </div>
             <div className='plant_outer_container'>
                 {plants.map((plant) => 
                     <PlantDisplay plant={plant} />
