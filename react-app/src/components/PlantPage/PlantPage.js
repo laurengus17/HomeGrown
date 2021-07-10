@@ -18,7 +18,6 @@ const PlantPage = () => {
     }, [dispatch])
 
     useEffect(() => {
-        console.log(plantId)
         dispatch(getPlant(plantId))
     }, [dispatch, plantId]);
 
@@ -47,10 +46,12 @@ const PlantPage = () => {
             </div>
             </div>
         </div>
-        <div>
+        <div className='add_plants_button_container'>
             <AddCommentModal plantId={plantId} />
         </div>
-        <PlantComments plantId={plantId} />
+        <div className='all_comments_container'>
+            <PlantComments plantId={plantId} />
+        </div>
         </>
     )
 }

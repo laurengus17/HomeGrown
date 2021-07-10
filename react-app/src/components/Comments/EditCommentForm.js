@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { updateComment } from '../../store/comments';
+import './EditCommentModal.css';
 
 const EditCommentForm = ({ setShowModal, comment, plantId }) => {
     const dispatch = useDispatch();
@@ -31,26 +32,30 @@ const EditCommentForm = ({ setShowModal, comment, plantId }) => {
 
     return (
         <>
-        <h2>Update Your Comment:</h2>
-        <form onSubmit={updateMyComment}>
-            <div>
-                <label>Title</label>
-                <input
-                type='text'
-                name='title'
-                onChange={updateTitle}
-                value={title}></input>
+        <div className='comment_edit_container'>
+            <div className='comment_edit_structure'>
+                <h2 className='comment_edit_title'>Update Your Comment:</h2>
+                <form onSubmit={updateMyComment}>
+                    <div className='comment_edit_body'>
+                        <input
+                        className='input'
+                        placeholder={comment.title}
+                        type='text'
+                        name='title'
+                        onChange={updateTitle}
+                        value={title}></input>
+                        <input
+                        className='input_textarea'
+                        placeholder={comment.content}
+                        type='textarea'
+                        name='content'
+                        onChange={updateContent}
+                        value={content}></input>
+                    </div>
+                    <button className='comment_edit_button' type='submit'>Submit</button>
+                </form>
             </div>
-            <div>
-                <label>Comment</label>
-                <input
-                type='textarea'
-                name='content'
-                onChange={updateContent}
-                value={content}></input>
-            </div>
-            <button type='submit'>Submit</button>
-        </form>
+        </div>
         </>
     )
 

@@ -14,6 +14,7 @@ const UserGreenhouse = () => {
     const userGreenhouse = Object.values(greenhouseState)
     const plantState = useSelector(state => state.plants.all)
     const plants = Object.values(plantState)
+    const user = useSelector(state => state.session.user);
 
     useEffect(() => {
         dispatch(getPlants())
@@ -25,7 +26,7 @@ const UserGreenhouse = () => {
 
     return (
         <>
-        <h2>HELLO GREENHOUSE</h2>
+        <h2 className='greenhouse_user_title'>{user.first_name} is growing...</h2>
         <div className='user_greenhouse_container'>
             {userGreenhouse.map((greenhouse) => 
                 <GreenhousePlant greenhouse={greenhouse} userId={userId} plants={plants} />
