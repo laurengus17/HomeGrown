@@ -1,0 +1,104 @@
+.plant_page_container {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.plant_image_plantpage {
+    height: 350px;
+    width: 300px;
+    border-radius: 2px;
+    margin-left: 20%;
+    margin-top: 2%;
+}
+
+.plant_image_plantpage:hover {
+    transform: scale(1.2, 1.2);
+}
+
+.plant_details_container {
+    height: 300px;
+    width: 100%;
+    margin-left: 100px;
+    align-items: center;
+}
+
+.description_text,
+.care_text {
+    flex-wrap: wrap;
+    width: 300px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+}
+
+.plant_title {
+    font-family: 'Alegreya', sans-serif;
+}
+
+.plant_variety_text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+}
+
+.add_buttons {
+    display: flex;
+}
+
+.add_to_greenhouse,
+.add_to_wishlist {
+    display: table;
+    width: 100%;
+}
+
+.greenhouse_left,
+.wishlist_left {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.greenhouse_right,
+.wishlist_right {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+}
+
+.add_greenhouse_text {
+    font-family: 'Alegreya', sans-serif;
+    font-size: 13px;
+    color: #4D774E;
+    font-style: italic;
+}
+
+.add_wishlist_text {
+    font-family: 'Alegreya', sans-serif;
+    font-size: 13px;
+    color: #5f2c3e;
+    font-style: italic;
+}
+
+.plant_page_greenhouse {
+    margin: 5px;
+    border: 0.1em solid #f6f2e9;
+    background-color:#f6f2e9;
+    color: #4D774E;
+    border-radius: 2px;
+}
+
+.plant_page_wishlist {
+    margin: 5px;
+    border: 0.1em solid #f6f2e9;
+    background-color:#f6f2e9;
+    color: #5f2c3e;
+    border-radius: 2px;
+}
+
+.plant_page_wishlist:hover {
+    box-shadow: 2px 2px 2px #D1ADCC;
+    border: 0.1em solid #D1ADCC;
+}
+
+.plant_page_greenhouse:hover {
+    box-shadow: 2px 2px 2px #9DC88D;
+    border: 0.1em solid #9DC88D;
+}

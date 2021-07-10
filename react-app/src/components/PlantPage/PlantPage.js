@@ -6,6 +6,7 @@ import PlantComments from '../Comments/PlantComments';
 import AddCommentModal from '../CommentForm/CommentModal';
 import AddToWishlist from '../Wishlists/AddToWishlist';
 import AddToGreenhouse from '../Greenhouses/AddToGreenhouse';
+import './PlantPage.css';
 
 const PlantPage = () => {
     const dispatch = useDispatch();
@@ -27,17 +28,24 @@ const PlantPage = () => {
 
     return (
         <>
-        <div>
-            <img src={plant.imgURL} alt='plant_page' />
-        </div>
-        <div>
-            <h2>{plant.name}</h2><span>Variety: {plant.variety}</span>
-            <AddToGreenhouse plantId={plantId} />
-            <h2>Description</h2> <span>{plant.description}</span>
-            <h2>Plant Care</h2><span>{plant.care}</span>   
-        </div>
-        <div>
-            <AddToWishlist plantId={plantId} />
+        <div className='plant_page_container'>
+            <img className='plant_image_plantpage' src={plant.imgURL} alt='plant_page' />
+            <div className='plant_details_container'>
+            <div><h2 className='plant_title'>{plant.name}</h2></div>
+            <div><h4 className='plant_variety_text'>Variety: {plant.variety}</h4></div>
+            <div>
+                <h2 className='plant_title'>Description</h2> 
+                <p className='description_text'>{plant.description}</p>
+            </div>
+            <div>
+                <h2 className='plant_title'>Plant Care</h2>
+                <p className='care_text'>{plant.care}</p>
+            </div>   
+            <div className='add_buttons'>
+                <AddToGreenhouse plantId={plantId} />
+                <AddToWishlist plantId={plantId} />
+            </div>
+            </div>
         </div>
         <div>
             <AddCommentModal plantId={plantId} />
