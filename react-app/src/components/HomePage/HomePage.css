@@ -1,10 +1,9 @@
 .home_container {
     display: grid;
-    width: 70%;
+    width: 100%;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 50px;
-    margin: 0 8px 8px 20px;
-    align-self: center;
+    margin-left: 8%;
+    align-items: center;
 }
 
 .home_title {
@@ -17,21 +16,21 @@
 .list_title_1 {
     font-family: 'Alegreya', sans-serif;
     text-align: start;
-    margin-left: 15%;
+    margin-left: 10%;
     font-size: 20px;
 }
 
 .list_title_2 {
     font-family: 'Alegreya', sans-serif;
     text-align: start;
-    margin-left: 18%;
+    margin-left: 13%;
     font-size: 20px;
 }
 
 .list_title_3 {
     font-family: 'Alegreya', sans-serif;
     text-align: start;
-    margin-left: 7%;
+    margin-left: 5%;
     font-size: 20px;
 }
 
@@ -55,4 +54,8 @@
 .browse_home_link {
     text-decoration: none;
     color: black;
+}
+
+.list_specific_div {
+    align-items: center;
 }

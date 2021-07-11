@@ -24,3 +24,12 @@
     height: 200px;
     border-radius: 8px;
 }
+
+.plant_display_name {
+    font-family: 'Alegreya', sans-serif;
+}
+
+.plant_display_link {
+    text-decoration: none;
+    color: black;
+}

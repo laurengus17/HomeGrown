@@ -64,7 +64,7 @@
 
 .light_dropdown {
     top: 215px;
-    left: 300px;
+    left: 33%;
     background-color: #f6f2e9;
     position: absolute;
     height: 100px;
@@ -82,7 +82,7 @@
 
 .size_dropdown {
     top: 215px;
-    left: 390px;
+    left: 41%;
     background-color: #f6f2e9;
     position: absolute;
     height: 100px;
@@ -100,7 +100,7 @@
 
 .difficulty_dropdown {
     top: 215px;
-    left: 470px;
+    left: 48%;
     background-color: #f6f2e9;
     position: absolute;
     height: 80px;
@@ -118,7 +118,7 @@
 
 .variety_dropdown {
     top: 215px;
-    left: 590px;
+    left: 57%;
     background-color: #f6f2e9;
     position: absolute;
     height: 290px;

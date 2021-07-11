@@ -1,7 +1,7 @@
 .signup_container {
     background-color: #4D774E;
 	border-radius: 15px;
-	height: 500px;
+	height: 600px;
 	width: 400px;
 	position: relative;
 	overflow: hidden;
@@ -53,7 +53,7 @@
     border: 0;
     border-radius: 15px;
     display: block;
-    margin: 3px auto; 
+    margin: 5px auto; 
     padding: 8px 30px;
     width: 70%;
     font-size: 15px;
