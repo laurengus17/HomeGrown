@@ -15,6 +15,12 @@ def seed_wishlists():
         Wishlist(
             userId=1, plantId=10
         ),
+        Wishlist(
+            userId=2, plantId=3
+        ),
+        Wishlist(
+            userId=2, plantId=5
+        ),
     ]
 
     for wishlist in wishlists:
