@@ -1,0 +1,15 @@
+.search_term_title {
+    font-family: 'Alegreya', sans-serif;
+    text-align: center;
+}
+
+.plants_results {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 5px;
+    column-gap: 5px;
+    margin: 0 8px 8px 8px;
+    align-self: center;
+}

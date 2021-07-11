@@ -1,7 +1,7 @@
 .edit_plant_container {
     background-color: #4D774E;
 	border-radius: 15px;
-	height: 510px;
+	height: 540px;
 	width: 500px;
 	position: relative;
 	overflow: hidden;
@@ -79,7 +79,7 @@
     border: 0;
     border-radius: 15px;
     display: block;
-    margin: 4px auto; 
+    margin: 10px auto; 
     padding: 8px 30px;
     width: 70%;
     font-size: 15px;

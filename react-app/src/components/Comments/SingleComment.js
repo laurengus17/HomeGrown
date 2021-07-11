@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { deleteComment } from '../../store/comments';
 import EditCommentModal from './EditCommentModal';
 import '../PlantPage/PlantPage.css';
@@ -7,6 +7,7 @@ import '../PlantPage/PlantPage.css';
 const SingleComment = ({ comment, plantId }) => {
     const dispatch = useDispatch();
     const [users, setUsers] = useState([]);
+    const currentUser = useSelector(state => state.session.user)
 
     const handleDelete = async (id) => {
         dispatch(deleteComment(id))
@@ -49,10 +50,14 @@ const SingleComment = ({ comment, plantId }) => {
                     <p className='comment_content'>{comment.content}</p>
                     {userName}
                 </div>
-                <EditCommentModal comment={comment} plantId={plantId} />
-                <button className='delete_comment_button' onClick={() => handleDelete(comment.id)}>
-                <i className="fas fa-trash-alt" />
-                </button>
+                {currentUser.id === comment.userId && 
+                <>
+                    <EditCommentModal comment={comment} plantId={plantId} />
+                    <button className='delete_comment_button' onClick={() => handleDelete(comment.id)}>
+                    <i className="fas fa-trash-alt" />
+                    </button>
+                </>
+                }
             </div>
         </>
     )

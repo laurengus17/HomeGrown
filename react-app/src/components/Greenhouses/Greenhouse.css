@@ -24,13 +24,15 @@
     margin: 30px;
 }
 
-.plant_image {
+.plant_image_greenhouse_page {
     border-radius: 50%;
     margin-top: 100%;
     margin-left: 60%;
+    height: 100px;
+    width: 100px;
 }
 
-.plant_image:hover {
+.plant_image_greenhouse_page:hover {
     transform: scale(1.2, 1.2);
 }
 

@@ -20,19 +20,19 @@ const HomePage = () => {
         <div>
         <h2 className='home_title'>Join Our Indoor Jungle</h2>
             <div className='home_container'>
-                <div>
+                <div className='list_specific_div'>
                 <h2 className='list_title_1'>Low Maintenance</h2>
                 <div className='list_container'>
                     <LowMaintenance />
                 </div>
                 </div>
-                <div>
+                <div className='list_specific_div'>
                 <h2 className='list_title_2'>Balcony Lovers</h2>
                 <div className='list_container'>
                     <Balcony />
                 </div>
                 </div>
-                <div>
+                <div className='list_specific_div'>
                 <h2 className='list_title_3'>Small Spaces, Small 🪴</h2>
                 <div className='list_container'>
                     <Small />

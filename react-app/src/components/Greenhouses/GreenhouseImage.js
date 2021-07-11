@@ -7,7 +7,7 @@ const GreenhouseImage = ({ plant }) => {
         <>
         <Link to={`/plants/${plant.id}`}>
             <>
-            <img className='plant_image' src={plant.imgURL} alt='user_plant' />
+            <img className='plant_image_greenhouse_page' src={plant.imgURL} alt='user_plant' />
             </>
         </Link>
         </>
