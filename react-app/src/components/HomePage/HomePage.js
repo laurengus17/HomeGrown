@@ -20,21 +20,31 @@ const HomePage = () => {
         <div>
         <h2 className='home_title'>Join Our Indoor Jungle</h2>
             <div className='home_container'>
+                <div>
+                <h2 className='list_title_1'>Low Maintenance</h2>
                 <div className='list_container'>
-                <h2 className='list_title'>Low Maintenance</h2>
                     <LowMaintenance />
                 </div>
+                </div>
+                <div>
+                <h2 className='list_title_2'>Balcony Lovers</h2>
                 <div className='list_container'>
-                    <h2 className='list_title'>Balcony Lovers</h2>
                     <Balcony />
                 </div>
+                </div>
+                <div>
+                <h2 className='list_title_3'>Small Spaces, Small 🪴</h2>
                 <div className='list_container'>
-                    <h2 className='list_title'>Small Spaces, Small 🪴</h2>
                     <Small />
                 </div>
+                </div>
             </div>
-        <Link to='/browse_all' exact={true} >
-            <h4 className='browse_link'>Browse All Plants</h4>
+        <Link className='browse_home_link' to='/browse_all' exact={true} >
+            <h4 className='browse_link'>
+                <i className="fas fa-seedling" />
+                &nbsp; Browse All Plants &nbsp; &nbsp;
+                <i className="fas fa-seedling" />
+                </h4>
         </Link>
         </div>
     )
