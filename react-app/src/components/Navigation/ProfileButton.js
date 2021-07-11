@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import './NavBar.css'
 
 
 function ProfileButton({ user }) {
 const [showMenu, setShowMenu] = useState(false);
-const history = useHistory();
 
 useEffect(() => {
     const closeMenu = () => setShowMenu(false)

@@ -5,12 +5,12 @@ import EditPlantModal from '../EditAPlant/EditAPlantModal';
 import { deletePlant } from '../../store/plants';
 import '../UserProfile/ProfilePage.css'
 
-
 const UserSinglePlant = ({ plant, userId }) => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     const handleDelete = async (id) => {
-        dispatch(deletePlant(id))
+        dispatch(deletePlant(id));
+        window.location.reload();
     }
 
 

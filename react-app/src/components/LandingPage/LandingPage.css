@@ -33,6 +33,7 @@ html, body {
     right: 10px;
     position: absolute;
     top: 70%;
+    z-index: 100;
 }
 
 .button_enter {

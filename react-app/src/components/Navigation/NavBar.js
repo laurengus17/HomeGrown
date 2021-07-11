@@ -26,7 +26,7 @@ const NavBar = () => {
   }
 
   return (
-    <nav>
+    <nav className='navbar_container'>
       <ul className='navbar_all_items'>
         <li className='left_navbar'>
           <Link to='/home' exact='true' activeclassname='active'>
