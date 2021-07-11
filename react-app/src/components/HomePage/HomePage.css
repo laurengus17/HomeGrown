@@ -10,22 +10,49 @@
 .home_title {
     text-align: center;
     font-family: 'Alegreya', sans-serif;
+    margin-bottom: 30px;
+    margin-top: 20px;
 }
 
-.list_title {
+.list_title_1 {
     font-family: 'Alegreya', sans-serif;
-    text-align: center;
+    text-align: start;
+    margin-left: 15%;
+    font-size: 20px;
+}
+
+.list_title_2 {
+    font-family: 'Alegreya', sans-serif;
+    text-align: start;
+    margin-left: 18%;
+    font-size: 20px;
+}
+
+.list_title_3 {
+    font-family: 'Alegreya', sans-serif;
+    text-align: start;
+    margin-left: 7%;
+    font-size: 20px;
 }
 
 .list_container {
     height: 300px;
     width: 300px;
     overflow-y: scroll;
-    scrollbar-width: thin;
+    align-items: center;
 }
 
 .browse_link {
     text-align: center;
     font-family: 'Alegreya', sans-serif;
-    margin: 20px;
+    margin-top: 40px;
+}
+
+.browse_link:hover {
+    transform: scale(1.5, 1.5);
+}
+
+.browse_home_link {
+    text-decoration: none;
+    color: black;
 }
