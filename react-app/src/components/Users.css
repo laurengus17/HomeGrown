@@ -1,0 +1,45 @@
+.what_growing_title {
+    text-align: center;
+    font-family: 'Alegreya', sans-serif;
+}
+
+.users_container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 5px;
+    column-gap: 5px;
+    margin: 0 8px 8px 8px;
+    align-self: center;
+}
+
+.users_specific_growing {
+    text-align: center;
+}
+
+.meet_title {
+    text-align: center;
+    font-family: 'Alegreya', sans-serif;
+}
+
+.user_picture {
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+}
+
+.user_text_growing {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.user_text_growing:hover {
+    transform: scale(1.2, 1.2);
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}

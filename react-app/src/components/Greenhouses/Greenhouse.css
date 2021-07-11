@@ -1,11 +1,53 @@
 .user_greenhouse_container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 5px;
+    column-gap: 5px;
+    margin: 0 8px 8px 8px;
+    align-self: center;
+}
+
+.greenhouse_container{
     background-image: url(../../images/greenhouse.png);
-    background-position: center;
-    background-size: contain;
+    background-size: 220px;
     background-repeat: no-repeat;
-    margin: 5px;
+    height: 300px;
+    width: 300px;
+    display: flex;
+}
+
+.greenhouse_user_title {
+    text-align: center;
+    font-family: 'Alegreya', sans-serif;
+    margin: 30px;
 }
 
 .plant_image {
+    border-radius: 50%;
+    margin-top: 100%;
+    margin-left: 60%;
+}
+
+.plant_image:hover {
+    transform: scale(1.2, 1.2);
+}
+
+.delete_from_greenhouse {
+    height: 20px;
+    border: 0.1em solid #4D774E;
+    background-color:#f6f2e9;
+    text-align: center;
+    color: #4D774E;
     border-radius: 7px;
+    margin-top: 63%;
+    margin-left: 15%;
+}
+
+.delete_from_greenhouse:hover {
+    background-color:#4D774E;
+    box-shadow: 2px 2px 2px #9DC88D;
+    border: 0.1em solid #9DC88D;
+    color: #f6f2e9;
 }

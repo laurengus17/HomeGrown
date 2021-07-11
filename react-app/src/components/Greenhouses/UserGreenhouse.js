@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserGreenhouse } from '../../store/greenhouses';
@@ -14,6 +14,18 @@ const UserGreenhouse = () => {
     const userGreenhouse = Object.values(greenhouseState)
     const plantState = useSelector(state => state.plants.all)
     const plants = Object.values(plantState)
+    const [users, setUsers] = useState([]);
+
+    const userInt = parseInt(userId, 10)
+
+    useEffect(() => {
+        async function fetchData() {
+        const response = await fetch('/api/users/');
+        const responseData = await response.json();
+        setUsers(responseData.users);
+        }
+        fetchData();
+    }, []);
 
     useEffect(() => {
         dispatch(getPlants())
@@ -23,9 +35,19 @@ const UserGreenhouse = () => {
         dispatch(getUserGreenhouse(userId))
     }, [dispatch, userId]);
 
+    const userFirstName = users.map((user) => {
+        return (
+            <>
+            {user.id === userInt ? 
+            <span>{user.first_name}</span>
+            : null }
+            </>
+        )
+    });
+
     return (
         <>
-        <h2>HELLO GREENHOUSE</h2>
+        <h2 className='greenhouse_user_title'>{userFirstName} is growing...</h2>
         <div className='user_greenhouse_container'>
             {userGreenhouse.map((greenhouse) => 
                 <GreenhousePlant greenhouse={greenhouse} userId={userId} plants={plants} />

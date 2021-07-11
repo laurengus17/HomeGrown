@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
 import EditCommentForm from './EditCommentForm';
-
+import '../PlantPage/PlantPage.css'
 
 function EditCommentModal({ comment, plantId }) {
 const [showModal, setShowModal] = useState(false);
 
 return (
     <>
-    <button onClick={() => setShowModal(true)}>
+    <button className='edit_comment_button' onClick={() => setShowModal(true)}>
         <i className="fas fa-edit" />
     </button>
     {showModal && (

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getPlantComments } from '../../store/comments';
 import SingleComment from './SingleComment';
-
+import '../PlantPage/PlantPage.css'
 
 const PlantComments = ({ plantId }) => {
     const dispatch = useDispatch();
@@ -16,7 +16,7 @@ const PlantComments = ({ plantId }) => {
 
     return (
         <>
-            <div>
+            <div className='all_comments'>
                 {comments.map((comment) => 
                     <SingleComment comment={comment} plantId={plantId} />
                 )}

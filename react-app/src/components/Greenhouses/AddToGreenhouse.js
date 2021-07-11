@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 import { createGreenhouse } from '../../store/greenhouses';
+import '../PlantPage/PlantPage.css';
 
 const AddToGreenhouse = ({ plantId }) => {
     const user = useSelector(state => state.session.user);
@@ -21,12 +22,16 @@ const AddToGreenhouse = ({ plantId }) => {
     }
 
     return (
-        <div>
+        <div className='add_to_greenhouse'>
             <form onSubmit={handleSubmit}>
-            <h4>Add To Greenhouse</h4>
-            <button type='submit'>
-                <i className="fas fa-home" />
-            </button>
+            <div className='greenhouse_left'>
+                <h4 className='add_greenhouse_text'>Add To Greenhouse</h4>
+            </div>
+            <div className='greenhouse_right'>
+                <button className='plant_page_greenhouse' type='submit'>
+                    <i className="fas fa-home" />
+                </button>
+            </div>
             </form>
         </div>
     )
