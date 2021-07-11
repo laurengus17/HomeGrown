@@ -1,11 +1,12 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import GreenhouseImage from './GreenhouseImage';
 import { deleteFromGreenhouse } from '../../store/greenhouses';
 import './Greenhouse.css';
 
 const GreenhousePlant = ({ greenhouse, plants }) => {
     const dispatch = useDispatch();
+    const currentUser = useSelector(state => state.session.user)
 
     const handleDelete = async (id) => {
         dispatch(deleteFromGreenhouse(id))
@@ -21,9 +22,13 @@ const GreenhousePlant = ({ greenhouse, plants }) => {
                     <GreenhouseImage plant={plant} />
             : null )}
             </div>
+            {currentUser.id === greenhouse.userId && 
+            <>
             <button className='delete_from_greenhouse' onClick={() => handleDelete(greenhouse.id)}>
                 <i className="fas fa-trash-alt" />
             </button>
+            </>
+            }
         </div>
         </>
     )
