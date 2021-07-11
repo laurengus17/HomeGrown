@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import GreenhouseImage from './GreenhouseImage';
 import { deleteFromGreenhouse } from '../../store/greenhouses';
+import './Greenhouse.css';
 
 const GreenhousePlant = ({ greenhouse, plants }) => {
     const dispatch = useDispatch();
