@@ -1,8 +1,13 @@
+.navbar_container {
+    background-color: #4D774E;
+}
+
 .navbar_all_items {
     display: flex;
     justify-content: center;
     background-color: #4D774E;
     top: 0px;
+    margin: auto;
 }
 
 .logo_img {
@@ -194,8 +199,8 @@
 .user_dropdown {
     background-color: #f6f2e9;
     position: absolute;
-    height: 150px;
-    width: 100px;
+    height: 170px;
+    width: 120px;
     border-radius: 5px;
     border: 2px solid #5f2c3e;
     box-shadow: 1px 8px #5f2c3e;
@@ -204,7 +209,7 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    margin: 0px;
+    margin-right: 2px;
     padding: 0px;
 }
 
