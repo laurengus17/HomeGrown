@@ -2,8 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteFromWishlist } from '../../store/wishlists';
 import { getPlants } from '../../store/plants'
-import PlantDisplay from '../PlantDisplay/PlantDisplay';
-
+import WishlistPlantImage from './WishlistImage';
 
 const WishListItem = ({ wishlist, userId }) => {
     const dispatch = useDispatch()
@@ -20,16 +19,18 @@ const WishListItem = ({ wishlist, userId }) => {
 
     return (
         <>
-        <div>
-            <div>
+        <div className='wishlist_items_container'>
+            <div className='plant_wishlist_div'>
             {plants.map((plant) => 
                 (plant.id === wishlist.plantId) ? 
-                    <PlantDisplay plant={plant} />
+                    <WishlistPlantImage plant={plant} />
             : null )}
             </div>
-            <button onClick={() => handleDelete(wishlist.id)}>
+            <div className='move_button'>
+            <button className='delete_wishlist_profile' onClick={() => handleDelete(wishlist.id)}>
                 <i className="fas fa-trash-alt" />
             </button>
+            </div>
         </div>
         </>
     )

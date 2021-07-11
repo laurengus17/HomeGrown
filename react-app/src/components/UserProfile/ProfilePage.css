@@ -2,30 +2,146 @@
     list-style: none;
 }
 
+.user_info_profile {
+    width: 170px;
+}
+
+.profile_list > li {
+    font-family: 'Alegreya', sans-serif;
+}
+
+.account_text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+}
+
 .profile_photo {
     height: 80px;
     width: 80px;
-    margin: 15px;
+    margin: 20px;
     border-radius: 50%;
     transform: scale(1.5, 1.5);
 }
 
+.plants_added_container,
+.outer_container_wishlist {
+    margin-top: 3%;
+    align-items: flex-start;
+    width: 300px;
+}
 
-/* user plants css */
+.outer_container_wishlist {
+    margin-right: 5%;
+}
+
+.plants_i_added {
+    font-family: 'Alegreya', sans-serif;
+    margin-left: 5%;
+}
+
 .user_plants_container {
     display: flex;
+    box-sizing: border-box;
     flex-direction: column;
     overflow: scroll;
     height: 250px;
-    width: 40%;
+    width: 100%;
+    align-items: flex-start;
     justify-content: space-between;
-    row-gap: 8px;
-    border: black 1px solid;
+    border: thick double #9DC88D;
     padding: 5px;
-    margin-left: 20px;
+    margin-top: 5%;
 }
 
-.plant_image {
+.single_plant_profile_container {
+    display: flex;
+    margin-top: 10px;
+}
+
+.plant_image_profile {
     width: 100px;
     height: 100px;
+    border-radius: 5px;
+}
+
+.plant_image_profile:hover {
+    transform: scale(1.2, 1.2);
+}
+
+.plant_name_profile {
+    font-family: 'Alegreya', sans-serif;
+    font-size: 14px;
+    margin-top: 2%;
+    text-align: center;
+    width: 100px;
+}
+
+.edit_plant_button_added,
+.delete_plant_button_added {
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    background-color: #D1ADCC;
+    color: #5f2c3e;
+    border: 2px solid #5f2c3e;
+    margin-top: 25%;
+    margin-left: 5%;
+}
+
+.edit_plant_button_added:hover,
+.delete_plant_button_added:hover {
+    background-color: #ffa903;
+    box-shadow: 2px 2px 2px #9DC88D;
+}
+
+.profile_page_container{
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    height: 500px;
+}
+
+.user_wishlist_container {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    overflow: scroll;
+    height: 250px;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+    border: thick double #D1ADCC;
+    padding: 5px;
+    margin-top: 5%;
+}
+
+#profile_leaf {
+    color: #4D774E;
+}
+
+.wishlist_items_container {
+    display: flex;
+}
+
+.move_button {
+    margin-left: 20%;
+    margin-top: 30%;
+}
+
+.delete_wishlist_profile {
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    background-color: #D1ADCC;
+    color: #5f2c3e;
+    border: 2px solid #5f2c3e;
+    margin-top: 25%;
+    margin-left: 5%;
+}
+
+.delete_wishlist_profile:hover {
+    background-color: #ffa903;
+    box-shadow: 2px 2px 2px #9DC88D;
 }
