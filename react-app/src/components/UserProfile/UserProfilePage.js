@@ -24,31 +24,37 @@ function UserProfilePage() {
   }
 
   return (
-    <div>
+    <div className='profile_page_container'>
+      <div className='user_info_profile'>
       <ul className='profile_list'>
         <li>
           <img className='profile_photo' src={user.imgURL} alt='profile'></img>
         </li>
         <li>
-          <strong>User Id</strong> {userId}
+          <h4>Hi, {user.first_name} {user.last_name}</h4>
         </li>
         <li>
-          <strong>Username</strong> {user.username}
+          <strong>My Account Info</strong>
         </li>
         <li>
-          <strong>Email</strong> {user.email}
+          <strong>Username: &nbsp; </strong><br></br>
+          <span className='account_text'>{user.username}</span> 
+        </li>
+        <li>
+          <strong>Email: &nbsp; </strong>
+          <span className='account_text'>{user.email}</span>
         </li>
       </ul>
-      <div>
-        <h4>🪴 I Have Added:</h4>
+      </div>
+      <div className='plants_added_container'>
+        <h4 className='plants_i_added'>🪴 I Have Added:</h4>
         <UserPlants userId={userId} />
       </div>
-      <div>
-        <div>
-          <i className="fas fa-leaf" />
-          <h4>one day I will grow...</h4>
+      <div className='outer_container_wishlist'>
+          <h4 className='plants_i_added'>
+            <i className="fas fa-leaf" id='profile_leaf' />&nbsp;
+            one day I will grow...</h4>
           <UserWishlist userId={userId} />
-        </div>
       </div>
     </div>
   );

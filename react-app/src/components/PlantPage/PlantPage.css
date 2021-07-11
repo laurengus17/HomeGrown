@@ -187,3 +187,9 @@
     margin-top: 15px;
     margin-left: 5px;
 }
+
+.edit_comment_button:hover,
+.delete_comment_button:hover {
+    background-color: #ffa903;
+    box-shadow: 2px 2px 2px #9DC88D;
+}

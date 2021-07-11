@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
 import EditPlantForm from './EditAPlantForm';
-
+import '../UserProfile/ProfilePage.css';
 
 function EditPlantModal({ plant, userId}) {
 const [showModal, setShowModal] = useState(false);
 
 return (
     <>
-    <button onClick={() => setShowModal(true)}>
+    <button className='edit_plant_button_added' onClick={() => setShowModal(true)}>
         <i className="fas fa-edit" />
     </button>
     {showModal && (
