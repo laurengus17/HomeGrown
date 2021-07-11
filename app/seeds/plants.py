@@ -153,7 +153,7 @@ def seed_plants():
         Plant(
             name='Shangri La', description='''A new cultivar of the popular Philodendron Hope Selloum, 
             the Philodendron Shangri La has heart-shaped leaves with deep, wavy incisions along the edges.''', 
-            imgURL='A new cultivar of the popular Philodendron Hope Selloum, the Philodendron Shangri La has heart-shaped leaves with deep, wavy incisions along the edges.',
+            imgURL='https://bloomscape.com/wp-content/uploads/2021/03/blomscape_philodendron-shangri-la_stone_medium-scaled.jpg?ver=425497',
             care='This tropical plant prefers a bit of humidity and will benefit from regular misting or the use of a humidifier.', light='high', size='small', difficulty=1,
             variety='Philodendron', userId=1
         ),
