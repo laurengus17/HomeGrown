@@ -5,7 +5,7 @@
     grid-template-rows: repeat(3, 1fr);
     row-gap: 5px;
     column-gap: 5px;
-    margin: 0 8px 8px 8px;
+    margin-left: 3%;
     align-self: center;
 }
 
@@ -118,7 +118,7 @@
 
 .variety_dropdown {
     top: 215px;
-    left: 57%;
+    left: 55%;
     background-color: #f6f2e9;
     position: absolute;
     height: 290px;
