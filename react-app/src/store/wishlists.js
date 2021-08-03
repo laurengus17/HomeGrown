@@ -27,7 +27,6 @@ export const getUserWishlist= (userId) => async (dispatch) => {
     const res = await fetch(`/api/wishlist/${userId}`);
     if(res.ok) {
         const wishlist = await res.json();
-        console.log(wishlist)
         dispatch(loadUserWishlist(wishlist.wishlists));
         return res;
     }

@@ -11,7 +11,7 @@ const LowMaintenance = () => {
     useEffect(() => {
         dispatch(getEasyPlants())
     }, [dispatch])
-    console.log(plants, 'LOW MAINTENANCE')
+
     return (
         <>
         {plants.length ?
