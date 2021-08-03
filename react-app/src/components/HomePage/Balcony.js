@@ -12,7 +12,6 @@ const Balcony = () => {
         dispatch(getBalconyPlants())
     }, [dispatch])
 
-    console.log(plants, 'BALCONY')
 
     return (
         <>

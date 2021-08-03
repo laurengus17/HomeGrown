@@ -27,7 +27,6 @@ export const getUserGreenhouse= (userId) => async (dispatch) => {
     const res = await fetch(`/api/greenhouse/${userId}`);
     if(res.ok) {
         const greenhouses = await res.json();
-        console.log(greenhouses, 'HERE ARE THE GREENHOUSESSS IN THUNK')
         dispatch(loadUserGreenhouse(greenhouses.greenhouses));
         return res;
     }

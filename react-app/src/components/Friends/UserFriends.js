@@ -8,7 +8,6 @@ const UserFriends = () => {
     const dispatch = useDispatch();
     const { userId }  = useParams();
     const friends = useSelector(state => state.friends)
-    console.log(friends)
 
     useEffect(() => {
         dispatch(getUserFriends())
